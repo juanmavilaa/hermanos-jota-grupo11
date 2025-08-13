@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const indicadoresContainer = document.getElementById('indicadores');
     const menuIcon = document.getElementById('menu');
     const nav = document.querySelector('header nav');
+    const btnCerrarMenu = document.getElementById('btnCerrarMenu');
             
     let currentIndex = 0;
     let slideInterval;
@@ -91,6 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
     //una barra lateral con el mismo (desde celu)
     menuIcon.addEventListener('click', () => {
         nav.classList.toggle('open');
+    });
+
+    //Para cerrar el menu. Creamos evento click en el btnCerrarMenu
+    btnCerrarMenu.addEventListener('click', () => {
+        nav.classList.remove('open');
     });
             
     // Iniciar
