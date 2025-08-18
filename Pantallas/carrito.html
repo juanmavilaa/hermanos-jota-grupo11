@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../Estilos/carrito-style.css">
+</head>
+<body>
+        <header class="header">
+        <div class="logo__container">
+            <img src="../IMAGES/logo.svg" class="header__logo">
+            <h1>Hermanos Jota</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="nav_list-item">
+                    <a href="../Pantallas/carrito-productos.html">
+                        <span class="material-symbols-outlined">
+                        subdirectory_arrow_left
+                        </span>
+                        Seguir Comprando
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="titulo__principal">Carrito</h2>
+        <div class="contenedor__carrito">
+            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está Vacío. <span class="material-symbols-outlined">
+            sentiment_dissatisfied
+            </span></p>
+
+            <div id="carrito-productos" class="productos-agregados disabled">
+
+                <div class="producto-agregado">
+                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
+                    <div class="carrito-producto-titulo">
+                        <small>Titulo</small>
+                        <h3>Aparador</h3>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <small>Cantidad</small>
+                        <p>1</p>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <small>Precio</small>
+                        <p>$</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <small>Subtotal</small>
+                        <p>$</p>
+                    </div>
+                    <button class="carrito-producto-eliminar">
+                        <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                </div>
+                <div class="producto-agregado">
+                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
+                    <div class="carrito-producto-titulo">
+                        <small>Titulo</small>
+                        <h3>Aparador</h3>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <small>Cantidad</small>
+                        <p>1</p>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <small>Precio</small>
+                        <p>$</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <small>Subtotal</small>
+                        <p>$</p>
+                    </div>
+                    <button class="carrito-producto-eliminar">
+                        <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                </div>
+                <div class="producto-agregado">
+                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
+                    <div class="carrito-producto-titulo">
+                        <small>Titulo</small>
+                        <h3>Aparador</h3>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <small>Cantidad</small>
+                        <p>1</p>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <small>Precio</small>
+                        <p>$</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <small>Subtotal</small>
+                        <p>$</p>
+                    </div>
+                    <button class="carrito-producto-eliminar">
+                        <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="carrito-acciones" class="carrito-acciones disabled">
+                <div class="carrito-acciones-izquierda">
+                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
+                </div>
+                <div class="carrito-acciones-derecha">
+                    <div class="carrito-acciones-total">
+                        <p>Total:</p>
+                        <p id="total">$</p>
+                    </div>
+                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
+                </div>
+            </div>
+            <p id="carrito-comprado" class="carrito-comprado disabled">Gracias por tu compra. <span class="material-symbols-outlined">
+            sentiment_very_satisfied
+            </span>
+            </p>
+
+        </div>
+    </main>
+
+<script src="../Scripts/carrito-scripts.js"></script>
+</body>
+</html>
