@@ -101,3 +101,58 @@ header nav ul li a {
   color: #333;
   transition: all 0.3s ease;
 }
+/*Para pcs*/
+@media (min-width: 768px) {
+  html {
+    font-size: 20px; /*Este valor equivale a 1rem*/
+  }
+
+  #menu {
+    visibility: hidden;
+  }
+
+  #btnCerrarMenu {
+    visibility: hidden;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    color: rgba(212, 164, 55, 0.5);
+  }
+
+  header nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    right: 0;
+    transition: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  header nav.open {
+    right: 0; /* no afecta */
+  }
+
+  .header-sticky {
+    padding: 0;
+  }
+}
