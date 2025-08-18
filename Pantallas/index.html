@@ -5,25 +5,11 @@
         <meta name="viewport" content="width=devide-width, initial-scale=1.0">
         <title></title>
         <link rel="stylesheet" href="/Estilos/styleIndex.css">
+        <link rel="stylesheet" href="/Estilos/generalStyle.css">
     </head>
     <body>
-        <header class="header-sticky">
-            <div class="marca">
-                <img src="/Images/logo.svg" alt="Logo Hermanos Jota" id="logo"> 
-                <p>Hermanos Jota</p>
-            </div>
-            
-            <nav>
-                <img src="/Images/icono-cerrar.png" alt="Botón Cerrar" id="btnCerrarMenu">
-                <ul>
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="productos.html">PRODUCTOS</a></li>
-                    <li><a href="contacto.html">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <img src="/Images/carrito.jpg" alt="img carrito" id="imgCarrito">
-            <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu">
-        </header>
+        <div id="header-container"></div>
+
         <main>
             <div class="carrusel-container">
             <div class="carrusel">
@@ -70,7 +56,7 @@
 
         <section class="secc-SALE">
             <h2>Por tiempo LIMITADO</h2>
-            <p>Cada diseño exclusivo refleja la pasión de manos expertas y materiales nobles, con <b>20% OFF</b></p>
+            <p>Cada diseño exclusivo refleja la pasión de manos expertas y materiales nobles, con <span style="font-weight: 600; color: #87A96B;">20% OFF</span></p>
             <div class="contenedor-btnVertodo">
                 <a href="productos.html" class="link-ver-todo" id="btnVertodo">
                     <span class="texto-link">VER MÁS</span>
@@ -122,11 +108,11 @@
                 <span> Envíos a todo el país </span>
             </div>
             <div class="cinta-contenido">
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
-        </div>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+            </div>
         </div>
 
         <section class="secc-naturales">
@@ -183,18 +169,23 @@
         
         </main>
         <footer>
-            <p>Redescubriendo el arte de vivir desde 2025</p>
-            <div class="footer-contacto">
-                <a href="contacto.html">Contacto</a>
-                <p><b>Barrio de San Cristóbal</b>, Av. San Juan 2847 - CABA</p>
-                <p>+54 11 4567-8900</p>
+            <div id="footer-columna1">
+                <p>Redescubriendo el arte de vivir desde 2025</p>
                 <a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=4E75E31B58A76A44E54D2E7AB3F0CFC7&f_hash=3B67708D12F0EAD0932AA4590FEFB0FC">
                     <img src="/Images/instagram.png" alt="logo instagram" id="icono-ig-contacto">
                 </a>
-                
+            </div>
+            <div id="footer-columna2"></div>
+                <a href="contacto.html">Contacto</a>
+                <div class="footer-contacto">
+                    <p><b>Barrio de San Cristóbal</b>, Av. San Juan 2847 - CABA</p>
+                    <p>+54 11 4567-8900</p>
+                    
+                </div>
             </div>
             <p>&copy; 2025, Hermanos Jota Furniture. Todos los derechos reservados.</p>
         </footer>
+        <script src="/Scripts/header.js"></script>
         <script src="/Scripts/ScriptIndex.js"></script>
     </body>
 </html>
