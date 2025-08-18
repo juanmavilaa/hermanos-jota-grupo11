@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const indicadoresContainer = document.getElementById('indicadores');
-    const menuIcon = document.getElementById('menu');
-    const nav = document.querySelector('header nav');
-    const btnCerrarMenu = document.getElementById('btnCerrarMenu');
             
     let currentIndex = 0;
     let slideInterval;
@@ -69,35 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
             moveToSlide(currentIndex + 1);
         }, slideTime);
     }
-
-    /*
-    ---- CONFIGURACIÓN AL SCROLLEAR ----
-    */ 
-    //Inicialmente el header no tiene fondo. Al detectar el scroll 
-    //con css lo "pegamos" al inicio y se le coloca uno para q se vea
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header-sticky');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-
-    /*
-    ---- CONFIGURACIÓN DEL ICONO MENU ----
-    */ 
-    //Agregamos un evento click al icono del menu para poder mostrar
-    //una barra lateral con el mismo (desde celu)
-    menuIcon.addEventListener('click', () => {
-        nav.classList.toggle('open');
-    });
-
-    //Para cerrar el menu. Creamos evento click en el btnCerrarMenu
-    btnCerrarMenu.addEventListener('click', () => {
-        nav.classList.remove('open');
-    });
             
     // Iniciar
     startSlideShow();

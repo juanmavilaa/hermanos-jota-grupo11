@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.header-sticky {
+    color: white;
+    width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    margin-top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+#imgCarrito{
+    filter: invert(100%);
+}
+
+.marca{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#logo{
+    margin-left: 20px;
+    width: 50px;
+    height: auto;
+    fill: #87A96B;
+}
+.marca p{
+    font-family: 'Playfair Display', sans-serif;
+    margin-left: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #A0522D;
+}
+
+#menu{
+    width: 30px;
+    height: auto;
+}
+
+#imgCarrito{
+    width: 1.8rem;
+    height: auto;
+    justify-content: center;
+    fill: #87A96B;
+}
+
+nav{
+    position: fixed; /* para que quede sobre el contenido */
+    top: 0;
+    right: -250px; /* fuera de pantalla a la derecha */
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    padding: 2rem;
+    z-index: 1000;
+    display: flex;  
+    flex-direction: column; 
+    align-items: center;
+}
+nav.open {
+  right: 0;
+}
+nav.close{
+    right: -100%;
+}
+
+#btnCerrarMenu{
+    width: 20px;
+    height: auto;
+    position: absolute;       
+    right: 30px;                
+    top: 30px;                   
+    cursor: pointer;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px;
+}
+header nav ul li {
+  margin-bottom: 1rem;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
