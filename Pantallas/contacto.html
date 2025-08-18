@@ -29,19 +29,43 @@
       <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu" />
     </header>
     <main>
-      <div class="contacto__formulario">
-        <h2 class="contacto__formulario__titulo">Haga una pregunta</h2>
-        <form action="#">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
+      <div class="contacto">
+        <h2 class="contacto__titulo">Haga una pregunta</h2>
+        <form class="contacto__formulario" action="#">
+          <label class="contacto__formulario__label" for="nombre"
+            >Nombre:</label
+          >
+          <input
+            class="contacto__formulario__input"
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+          />
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label class="contacto__formulario__label" for="email">Email:</label>
+          <input
+            class="contacto__formulario__input"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
 
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <label class="contacto__formulario__label" for="mensaje"
+            >Mensaje:</label
+          >
+          <textarea
+            class="contacto__formulario__mensaje"
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required
+          ></textarea>
 
-          <button type="submit">Enviar</button>
+          <button class="contacto__formulario__boton" type="submit">
+            Enviar
+          </button>
         </form>
       </div>
     </main>
