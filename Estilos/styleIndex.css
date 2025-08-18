@@ -155,9 +155,9 @@ body {
   color: #a0522d;
   margin-bottom: 30px;
   font-size: 1.8rem;
-  font-weight: 300; /*Grosor*/
   margin-top: 40px;
   margin-left: 35px;
+  font-weight: 500;
 }
 
 .secc-SALE > p,
@@ -238,6 +238,7 @@ body {
   color: #a0522d;
   margin-bottom: 30px;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .caracteristicas {
@@ -378,30 +379,6 @@ body {
   color: white;
 }
 
-footer {
-    background-color: #f8f3ec;
-    color: #333;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-}
-
-#icono-ig-contacto {
-  filter: invert(100%);
-  width: 30px;
-}
-
-.footer-contacto{
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-columna1{
-    display: flex;
-    flex-direction: column;
-}
 
 /*Para pcs*/
 @media (min-width: 768px) {
