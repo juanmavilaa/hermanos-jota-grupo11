@@ -66,6 +66,54 @@ document.addEventListener('DOMContentLoaded', function() {
             moveToSlide(currentIndex + 1);
         }, slideTime);
     }
+
+    const carousel = document.querySelector(".carousel-principios");
+    const principios = document.querySelectorAll(".principio");
+    const dotsContainer = document.querySelector(".dots-container");
+
+    // Cantidad de elementos visibles según pantalla
+    function visibleElements() {
+        if(window.innerWidth >= 1024) return 3;
+        if(window.innerWidth >= 768) return 2;
+        return 1;
+    }
+
+    // Crear dots
+    function crearDots() {
+        dotsContainer.innerHTML = "";
+        const vis = visibleElements();
+        const cantidadDots = Math.ceil(principios.length / vis);
+        
+        for(let i=0; i<cantidadDots; i++){
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if(i===0) dot.classList.add("active");
+            dot.addEventListener("click", ()=> {
+            carousel.scrollTo({
+                left: i * carousel.offsetWidth,
+                behavior: "smooth"
+            });
+            setActiveDot(i);
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function setActiveDot(index) {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach(d => d.classList.remove("active"));
+        if(dots[index]) dots[index].classList.add("active");
+    }
+
+    // Actualizar dots al hacer scroll
+    carousel.addEventListener("scroll", () => {
+        const vis = visibleElements();
+        const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+        setActiveDot(index);
+    });
+
+    window.addEventListener("resize", crearDots);
+    crearDots();
             
     // Iniciar
     startSlideShow();
