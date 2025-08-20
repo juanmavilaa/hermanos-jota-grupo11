@@ -4,48 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="../Estilos/carrito-productos-style.css">
+    <link rel="stylesheet" href="../Estilos/styleGeneral.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo__container">
-            <img src="../IMAGES/logo.svg" class="header__logo">
-            <h1>Hermanos Jota</h1>
-        </div>
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="nav_list-item">
-                    <a href="../Pantallas/carrito-productos.html">
-                        <span class="material-symbols-outlined">
-                        store
-                        </span>
-                        Tienda
-                    </a>
-                </li>
-                <li class="nav_list-item">
-                    <a href="../Pantallas/carrito.html">
-                        <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span>
-                        Carrito
-                        <span class="numerito" id="numerito">0</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+
     <main class="main">
-        <h2 class="productos-titulo">Poductos</h2>
+        <h2 class="productos-titulo">Productos</h2>
         <div class="lista__productos" id="contenedor-productos">
-            
             
         </div>
     </main>
-    <footer>
-        <span>@copyright Hermanos Jota</span>
-    </footer>
+    <div id="footer-container"></div>
+
+    <script src="../Scripts/ArrayCatalogo.js"></script>
     <script src="../Scripts/productos-carrito-scripts.js"></script>
+    <script src="/Scripts/ScriptGeneral.js"></script>
 </body>
 </html>
