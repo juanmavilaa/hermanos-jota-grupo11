@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
 * {
     margin: 0;
     padding: 0;
@@ -100,12 +102,24 @@ header nav ul {
 header nav ul li {
   margin-bottom: 1rem;
 }
-header nav ul li a {
+header nav ul li a, header > a{
   text-decoration: none;
   font-size: 1.2rem;
   color: #333;
   transition: all 0.3s ease;
 }
+
+.material-symbols-outlined{
+  font-family: 'Material Symbols Outlined';
+  font-size: 35px;
+}
+.numerito {
+    background-color: transparent ;
+    color: #000;
+    padding: 0.25rem;
+    border-radius: 1rem;
+}
+
 /*Para pcs*/
 @media (min-width: 768px) {
   html {
@@ -137,7 +151,7 @@ header nav ul li a {
     font-weight: bold;
   }
 
-  nav ul li a:hover {
+  nav ul li a:hover, header > a:hover{
     color: rgba(212, 164, 55, 0.5);
   }
 
