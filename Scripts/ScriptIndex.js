@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cantidad de elementos visibles según pantalla
     function visibleElements() {
         if(window.innerWidth >= 1024) return 3;
-        if(window.innerWidth >= 768) return 2;
         return 1;
     }
 

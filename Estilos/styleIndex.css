@@ -507,7 +507,7 @@ body {
 }
 
 /*Para pcs*/
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   html {
     font-size: 20px; /*Este valor equivale a 1rem*/
   }
