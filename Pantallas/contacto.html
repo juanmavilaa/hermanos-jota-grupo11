@@ -26,8 +26,29 @@
       <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu" />
     </header>
     <main>
+
+      <h1 class="contacto__titulo">Nuestra Historia</h1>
+      <div class="nuestra-historia">
+        <p class="nuestra-historia__texto">
+          La Mueblería Hermanos Jota es un taller familiar con más de 30 años de tradición en el diseño y la fabricación de muebles de madera de autor.
+        </p>
+        <p class="nuestra-historia__texto">
+          Son conocidos en su ciudad porque cada pieza cuenta la historia de manos expertas y materiales nobles, con un estilo que combina la robustez de lo artesanal con líneas de diseño moderno.
+        </p>
+
+        <!-- temporal definicion de video -->
+        <video width="640" height="480" poster="/Images/logo.svg" preload="metadata" controls>
+          <source src="/Videos/Video-institucional-Hermanos-Jota.mp4" type="video/mp4">
+          <source src="/Videos/Video institucional Hermanos Jota.webm" type="video/webm">
+          <img src="/Images/exclamation.png" alt="Video no soportado">
+          Tu navegador no soporta el elemento video.
+        </video>
+
+      </div>
+
+
+      <h1 class="contacto__titulo">Haga una pregunta</h1>
       <div class="contacto">
-        <h2 class="contacto__titulo">Haga una pregunta</h2>
         <form class="contacto__formulario" action="#">
           <label class="contacto__formulario__label" for="nombre"
             >Nombre:</label
@@ -37,6 +58,7 @@
             type="text"
             id="nombre"
             name="nombre"
+            placeholder="Ingrese su nombre..."
             required
           />
 
@@ -46,6 +68,7 @@
             type="email"
             id="email"
             name="email"
+            placeholder="Ingrese su email..."
             required
           />
 
@@ -57,6 +80,7 @@
             id="mensaje"
             name="mensaje"
             rows="4"
+            placeholder="Ingrese su mensaje..."
             required
           ></textarea>
 
@@ -65,6 +89,32 @@
           </button>
         </form>
       </div>
+
+      <h1 class="contacto__titulo">Contacto Digital</h1>
+      <div class="contacto-digital">
+        <table class="contacto-digital__tabla">
+          <tbody>
+            <tr>
+              <td>Email general</td>
+              <td><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></td>
+            </tr>
+            <tr>
+              <td>Ventas</td>
+              <td><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></td>
+            </tr>
+            <tr>
+              <td>Instagram</td>
+              <td><a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td><a href="https://wa.me/5491145678900" target="_blank">+54 11 4567-8900</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
     </main>
     <div id="footer-container"></div>
     <script src="/Scripts/ScriptGeneral.js"></script>
