@@ -41,7 +41,7 @@ body {
   display: block;
   height: 100vh;
   object-fit: cover;
-  filter: brightness(70%);
+  filter: brightness(80%);
   background-color: #f5e6d3;
 }
 
@@ -137,7 +137,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #c47a6d;
+  background: #D4A437;
   margin: 0 5px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -147,12 +147,10 @@ body {
   background: white;
 }
 
-.secc-SALE,
-.secc-vendidos {
+.secc-vendidos{
   text-align: Left;
 }
 
-.secc-SALE h2,
 .secc-vendidos h2 {
   font-family: "Playfair Display", sans-serif;
   color: #a0522d;
@@ -163,7 +161,6 @@ body {
   font-weight: 500;
 }
 
-.secc-SALE > p,
 .secc-vendidos > p {
   font-size: 1rem;
   text-align: left;
@@ -230,6 +227,51 @@ body {
 
 .contenedor-tarjetas::-webkit-scrollbar {
   display: none;             
+}
+
+.contenedor-inspiraciones{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  gap: 20px;
+}
+
+.tarjeta-inspiracion{
+  width: 80%;
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.tarjeta-inspiracion img{
+  width: 100%;
+  height: auto;
+  filter: brightness(70%);
+  transition: transform 0.4s ease;
+}
+
+.tarjeta-inspiracion img:hover{
+  transform: scale(1.05);
+}
+
+.tarjeta-inspiracion p{     
+  position: absolute;      
+  top: 50%;                
+  left: 50%;               
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 2;
+  width: 90%;                
+  pointer-events: none;
+  font-family: "Playfair Display", sans-serif;
 }
 
 .envios-cinta {
@@ -496,5 +538,20 @@ body {
     display: inline-block;
   }
 
+  .contenedor-inspiraciones{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .tarjeta-inspiracion{
+    width: 30%;
+    height: 80vh;
+    display: inline-block;
+  }
+
+  .tarjeta-inspiracion img{
+    height: 100%;
+    width: auto;
+  }
 }
 
