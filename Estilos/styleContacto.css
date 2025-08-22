@@ -21,9 +21,7 @@ main {
   display: block;
   position: relative;
   z-index: 1;
-  /* padding: 200px; */
-  /* 15vh = 150px = 9.375rem */
-  margin-top: 9.375rem;
+  margin-top: 15vh;
   padding: 1rem;
 }
 
@@ -41,6 +39,17 @@ main {
   font-size: 1rem;
   margin-bottom: 1rem;
   text-align: justify;
+}
+
+.nuestra-historia__texto__resaltar {
+  font-weight: bold;
+  color: var(--color-acentos-premium);
+}
+
+.nuestra-historia__texto__subtitulo {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: var(--color-primario);
 }
 
 .nuestra-historia video {
@@ -61,11 +70,7 @@ main {
 
 /* seccion contacto */
 .contacto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 500px;
+  max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
   background-color: var(--color-background);
@@ -83,13 +88,20 @@ main {
 .contacto__formulario {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   gap: 1rem;
 }
 
-.contacto__formulario__label {
+.contacto__formulario__label,
+.contacto__formulario__input,
+.contacto__formulario__mensaje,
+.contacto__formulario__boton {
+  margin: auto;
+  width: 100%;
   font-weight: bold;
-  margin-top: 0.75rem;
+  font-size: 1rem;
 }
 
 .contacto__formulario__input,
@@ -97,15 +109,14 @@ main {
   padding: 0.75rem;
   border: 1px solid;
   border-radius: 5px;
-  font-size: 1rem;
 }
 
 .contacto__formulario__boton {
   padding: 0.75rem;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  margin-top: 10px;
+  margin: auto;
+  width: 100%;
   background-color: var(--color-primario);
 }
 
@@ -116,27 +127,17 @@ main {
 
 /*  seccion contenido digital */
 .contacto-digital {
+  max-width: 900px;
   margin: 3rem auto;
-  width: 100%;
-  padding: 1rem;
   overflow-x: auto;
+  background-color: var(--color-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px black;
+  font-weight: bold;
 }
 
 .contacto-digital__tabla {
   width: 100%;
-  border-collapse: collapse;
-  background-color: var(--color-background);
-  box-shadow: 0 2px 6px black;
-  border-radius: 8px;
-  min-width: 360px;
-}
-
-.contacto-digital th {
-  background-color: var(--color-primario);
-  color: white;
-  text-align: left;
-  padding: 0.8rem;
-  font-weight: bold;
 }
 
 .contacto-digital td {
@@ -157,7 +158,6 @@ main {
 .contacto-digital a {
   color: var(--color-secundario);
   text-decoration: none;
-  font-weight: 500;
 }
 
 .contacto-digital a:hover {
@@ -165,20 +165,21 @@ main {
   color: var(--color-acentos-premium);
 }
 
+/* .contacto-digital__tabla__elemento-izquierdo {
+  width: 50%;
+  text-align: right;
+} */
+
 /*  RESPONSIVIDAD  */
 
+/* pc */
+@media (max-width: 1024) {
+}
+
+/* tabletas */
 @media (max-width: 768px) {
-  .principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-  .nuestra-historia,
-  .contacto,
-  .contacto-digital {
-    padding: 1rem;
-    margin: 1rem 0 4rem 0;
-    width: 100%;
-  }
+}
+
+/* disp moviles */
+@media (max-width: 360px) {
 }
