@@ -71,7 +71,7 @@
 }
 .numerito {
   position: absolute;
-  bottom: -4px;    /* ajusta según necesidad */
+  bottom: -4px;    
   right: -4px;
   background-color: #D4A437;
   color: #fff;
@@ -378,3 +378,17 @@ footer {
   flex-direction: column;
   gap: 10px;
 }
+
+#iconoUsuario {
+  color: #333; 
+  transition: color 0.3s ease;
+}
+
+#iconoUsuario:hover, #iconoUsuario.logueado:hover{
+  color: rgba(212, 164, 55, 0.5); 
+}
+
+#iconoUsuario.logueado {
+  color: #87A96B; 
+}
+
