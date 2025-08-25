@@ -191,8 +191,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: all 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  width: 250px;
   margin: 15px;
   text-decoration: none;
   scroll-snap-align: start;
