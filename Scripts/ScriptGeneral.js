@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailGuardado = localStorage.getItem("emailUsuario");
 /*Código que validará si el usuario se logueó y dejará el indicador en verde*/
     if(nombreGuardado && emailGuardado){
-        document.getElementById("iconoUsuario").style.color = "#87A96B";
+        document.getElementById("iconoUsuario").classList.add("logueado");
         console.log("Usuario logueado: " + nombreGuardado);
     }
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 //borramos datos locales
                 localStorage.removeItem("nombreUsuario");
                 localStorage.removeItem("emailUsuario");
-                document.getElementById("iconoUsuario").style.color = "#333";
+                document.getElementById("iconoUsuario").classList.remove("logueado");
             }
         }else{
             e.preventDefault();
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(nombre !== "" && email.includes("@")){
             localStorage.setItem("nombreUsuario", nombre);
             localStorage.setItem("emailUsuario", email);
-            document.getElementById("iconoUsuario").style.color = "#87A96B";
+            document.getElementById("iconoUsuario").classList.add("logueado");
             alert(`Has iniciado sesión como ${nombre}.`);
         }
         loginModal.style.display = "none";
