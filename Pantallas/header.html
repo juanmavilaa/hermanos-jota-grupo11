@@ -1,10 +1,10 @@
 <header class="header-sticky">
-    <div class="marca">
+    <div class="header-marca">
         <img src="/Images/logo.svg" alt="Logo Hermanos Jota" id="logo"> 
         <p>Hermanos Jota</p>
     </div>
     
-    <nav>
+    <nav class="header-nav">
         <img src="/Images/icono-cerrar.png" alt="Botón Cerrar" id="btnCerrarMenu">
         <ul>
             <li><a href="index.html">INICIO</a></li>
@@ -12,11 +12,30 @@
             <li><a href="contacto.html">CONTACTO</a></li>
         </ul>
     </nav>
-    <a href="../Pantallas/carrito.html">
-        <span class="material-symbols-outlined">
-            shopping_cart
-        </span>
-        <span class="numerito" id="numerito">0</span>
-    </a>
-    <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu">
+    <div class="header-right">
+        <a href="#" class="header-usuario" id="usuarioIcono">
+            <span class="material-symbols-outlined" id="iconoUsuario">account_circle</span>
+        </a>
+        <!-- Modal/Pop-up de Login -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Iniciar Sesión</h2>
+                    <form id="loginForm">
+                        <input type="text" id="nombre" required placeholder="Nombre">
+                        <input type="email" id="email" required placeholder="Correo Electrónico">
+                        
+                        <button type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+
+        <a href="../Pantallas/carrito.html" class="header-carrito">
+            <span class="material-symbols-outlined">
+                shopping_cart
+            </span>
+            <span class="numerito" id="numerito">0</span>
+        </a>
+        <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu" class="header-menu">
+    </div>
 </header>
