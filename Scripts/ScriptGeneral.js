@@ -22,41 +22,72 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.classList.remove('open');
     });
 
-    /*
-    ---- CONFIGURACIÓN DEL MODAL PARA INICIAR SESION ----
+    /* 
+    ---- CONFIGURACIÓN DEL INICIO DE SESION + AVATARES ----
     */
-    const nombreGuardado = localStorage.getItem("nombreUsuario");
-    const emailGuardado = localStorage.getItem("emailUsuario");
-/*Código que validará si el usuario se logueó y dejará el indicador en verde*/
-    if(nombreGuardado && emailGuardado){
-        document.getElementById("iconoUsuario").classList.add("logueado");
-        console.log("Usuario logueado: " + nombreGuardado);
-    }
-
+    const iconoUsuario = document.getElementById("iconoUsuario");
     const usuarioLink = document.getElementById("usuarioIcono"); 
     const loginModal = document.getElementById("loginModal");
     const closeModal = document.querySelector(".close");
     const loginForm = document.getElementById("loginForm");
+    const avatarMini = document.getElementById("avatarMini");
 
+    const nombreGuardado = localStorage.getItem("nombreUsuario");
+    const emailGuardado = localStorage.getItem("emailUsuario");
+
+    function setAvatar(avatar) {
+        iconoUsuario.innerHTML = `<img src="/Images/Avatares/avatar-${avatar}.png" alt="Avatar" class="avatar-icono">`;
+    }
+
+    function resetAvatar() {
+        iconoUsuario.innerHTML = "account_circle"; // vuelve al ícono por defecto
+    }
+
+    // Funciones para el avatar mini dentro del modal
+    function mostrarAvatarMini(avatar) {
+        avatarMini.src = `/Images/Avatares/avatar-${avatar}.png`;
+        avatarMini.classList.remove("oculto");
+    }
+
+    function ocultarAvatarMini() {
+        avatarMini.src = "";
+        avatarMini.classList.add("oculto");
+    }
+
+    /* Código que validará si el usuario se logueó y dejará el indicador en verde */
+    if(nombreGuardado && emailGuardado){
+        iconoUsuario.classList.add("logueado");
+        console.log("Usuario logueado: " + nombreGuardado);
+        
+        const avatarGuardado = localStorage.getItem("avatarUsuario");
+        if (avatarGuardado) {
+            setAvatar(avatarGuardado);
+            mostrarAvatarMini(avatarGuardado); // opcional: si querés que se vea en el modal
+        } else {
+            resetAvatar();
+            ocultarAvatarMini();
+        }
+    }
+
+    // Click en el icono del usuario
     usuarioLink.addEventListener("click", (e) => {
         const nombreGuardado = localStorage.getItem("nombreUsuario");
         const emailGuardado = localStorage.getItem("emailUsuario");
-        //verificamos si el usuario esta logueado
+
         if(nombreGuardado !== null && emailGuardado !== null){
-            //si está logueado, en vez de mostrar el form de iniciar sesion,
-            //preguntamos si quiere cerrar sesion
             const deseaCerrarSesion = confirm("¿Está seguro que desea cerrar sesión?");
             if(deseaCerrarSesion === true){
-                //borramos datos locales
                 localStorage.removeItem("nombreUsuario");
                 localStorage.removeItem("emailUsuario");
-                document.getElementById("iconoUsuario").classList.remove("logueado");
+                localStorage.removeItem("avatarUsuario");
+                iconoUsuario.classList.remove("logueado");
+                resetAvatar();
+                ocultarAvatarMini();
             }
-        }else{
+        } else {
             e.preventDefault();
             loginModal.style.display = "flex";
         }
-        
     });
 
     // Cerrar modal con la X
@@ -76,16 +107,33 @@ document.addEventListener("DOMContentLoaded", () => {
         e.stopPropagation();
     });
 
-    // Validación 
+    // Mostrar avatar mini al seleccionar uno
+    document.querySelectorAll("input[name='avatar']").forEach(radio => {
+        radio.addEventListener("change", () => {
+            mostrarAvatarMini(radio.value);
+        });
+    });
+
+    // Validación del formulario
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const nombre = document.getElementById("nombre").value.trim();
         const email = document.getElementById("email").value.trim();
+        const avatar = document.querySelector("input[name='avatar']:checked");
 
         if(nombre !== "" && email.includes("@")){
             localStorage.setItem("nombreUsuario", nombre);
             localStorage.setItem("emailUsuario", email);
-            document.getElementById("iconoUsuario").classList.add("logueado");
+            if (avatar) {
+                localStorage.setItem("avatarUsuario", avatar.value);
+                setAvatar(avatar.value);
+                mostrarAvatarMini(avatar.value);
+            } else {
+                localStorage.removeItem("avatarUsuario");
+                resetAvatar();
+                ocultarAvatarMini();
+            }
+            iconoUsuario.classList.add("logueado");
             alert(`Has iniciado sesión como ${nombre}.`);
         }
         loginModal.style.display = "none";
