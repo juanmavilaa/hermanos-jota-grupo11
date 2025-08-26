@@ -7,7 +7,7 @@ const productos = [
         materiales: "Nogal macizo FSC®, herrajes de latón",
         acabado: "Aceite natural ecológico",
         capacidad: "6 compartimentos interiores",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Aparador Uspallata.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -19,7 +19,7 @@ const productos = [
         acabado: "Laca mate ecológica",
         capacidad: "45 kg por estante",
         modulares: "5 estantes ajustables",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Biblioteca Recoleta.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -31,7 +31,7 @@ const productos = [
         acabado: "Cera vegetal, tapizado premium",
         tapizado: "Repelente al agua y manchas",
         confort: "Espuma alta densidad",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Butaca Mendoza.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -43,7 +43,7 @@ const productos = [
         acabado: "Cuero anilina premium",
         rotacion: "360° silenciosa y suave",
         garantia: "10 años en estructura",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Sillón Copacabana.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -55,7 +55,7 @@ const productos = [
         acabado: "Mármol pulido, aceite natural en madera",
         peso: "42 kg",
         carga_max: "25 kg distribuidos",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Mesa de Centro Araucaria.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -67,7 +67,7 @@ const productos = [
         acabado: "Barniz mate de poliuretano",
         almacenamiento: "1 cajón + repisa inferior",
         caracteristicas: "Cajón con cierre suave",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Mesa de Noche Aconcagua.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -79,19 +79,19 @@ const productos = [
         acabado: "Aceite natural, tapizado premium",
         colchon: "Compatible con colchón 160×200",
         caracteristicas: "Cabecero flotante acolchado",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Cama Neuquén.jpg",
         añadir: "añadir al carrito"
     },
     {
         id: 8,
-        nombre: "Cama Neuquén",
+        nombre: "Sofá Palermo",
         descripcion: "Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera. Los cojines combinan espuma de alta resiliencia con plumón reciclado, ofreciendo comodidad duradera y sostenible para el hogar moderno.",
         medidas: "220 × 90 × 80 cm",
         estructura: "Madera de eucalipto certificada FSC®",
         tapizado: "Lino 100% natural premium",
         relleno: "Espuma HR + plumón reciclado",
         sostentibilidad: "Materiales 100% reciclables",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Sofá Palermo.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -103,7 +103,7 @@ const productos = [
         acabado: "Aceite-cera natural",
         capacidad: "6-10 comensales",
         extension: "Sistema de mariposa central",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Mesa Comedor Pampa.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -113,9 +113,9 @@ const productos = [
         medidas: "45 × 52 × 80 cm (cada una)",
         materiales: "Contrachapado nogal, tubo de acero",
         acabado: "Laca mate, pintura epoxi",
-        Apilables: "Hsta 6 sillas",
+        Apilables: "Hasta 6 sillas",
         apilables: "Set de 4 sillas",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Sillas Córdoba.jpg",
         añadir: "añadir al carrito"
     },
     {
@@ -127,11 +127,11 @@ const productos = [
         acabado: "Laca mate resistente",
         almacenamiento: "1 cajón con organizador",
         cables: "Pasacables integrado",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Escritorio Costa.jpg",
         añadir: "añadir al carrito"
     },
     {
-         id: 12,
+        id: 12,
         nombre: "Silla de Trabajo Belgrano",
         descripcion: "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado. Diseñada para largas jornadas de trabajo con máximo confort y apoyo lumbar, ideal para oficinas en casa y espacios de coworking.",
         medidas: "60 × 60 × 90-100 cm",
@@ -139,10 +139,10 @@ const productos = [
         acabado: "Base cromada, tapizado premium",
         regulacion: "Altura + inclinación respaldo",
         certificacion: "Ergonomía europea EN 1335",
-        imagen: "aparadorUspallata.jpg",
+        imagen: "../Images/Catalogo/Silla de Trabajo Belgrano.jpg",
         añadir: "añadir al carrito"
     }
-]
+];
 
 function mostrarProducto(id) {
   let productoEncontrado = null;
