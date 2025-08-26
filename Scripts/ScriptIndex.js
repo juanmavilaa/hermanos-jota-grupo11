@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const indicadoresContainer = document.getElementById('indicadores');
-    const menuIcon = document.getElementById('menu');
-    const nav = document.querySelector('header nav');
-    const btnCerrarMenu = document.getElementById('btnCerrarMenu');
             
     let currentIndex = 0;
     let slideInterval;
@@ -70,35 +67,103 @@ document.addEventListener('DOMContentLoaded', function() {
         }, slideTime);
     }
 
-    /*
-    ---- CONFIGURACIÓN AL SCROLLEAR ----
-    */ 
-    //Inicialmente el header no tiene fondo. Al detectar el scroll 
-    //con css lo "pegamos" al inicio y se le coloca uno para q se vea
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header-sticky');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    const carousel = document.querySelector(".carousel-principios");
+    const principios = document.querySelectorAll(".principio");
+    const dotsContainer = document.querySelector(".dots-container");
+
+    // Cantidad de elementos visibles según pantalla
+    function visibleElements() {
+        if(window.innerWidth >= 1024) return 3;
+        return 1;
+    }
+
+    // Crear dots
+    function crearDots() {
+        dotsContainer.innerHTML = "";
+        const vis = visibleElements();
+        const cantidadDots = Math.ceil(principios.length / vis);
+        
+        for(let i=0; i<cantidadDots; i++){
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if(i===0) dot.classList.add("active");
+            dot.addEventListener("click", ()=> {
+            carousel.scrollTo({
+                left: i * carousel.offsetWidth,
+                behavior: "smooth"
+            });
+            setActiveDot(i);
+            });
+            dotsContainer.appendChild(dot);
         }
+    }
+
+    function setActiveDot(index) {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach(d => d.classList.remove("active"));
+        if(dots[index]) dots[index].classList.add("active");
+    }
+
+    // Actualizar dots al hacer scroll
+    carousel.addEventListener("scroll", () => {
+        const vis = visibleElements();
+        const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+        setActiveDot(index);
     });
 
+    window.addEventListener("resize", crearDots);
+    crearDots();
 
-    /*
-    ---- CONFIGURACIÓN DEL ICONO MENU ----
-    */ 
-    //Agregamos un evento click al icono del menu para poder mostrar
-    //una barra lateral con el mismo (desde celu)
-    menuIcon.addEventListener('click', () => {
-        nav.classList.toggle('open');
-    });
+    const contenedorProductosMasVendidos = document.querySelector("#carousel-container-productos-mas-vendidos");
+    const contenedorTarjetas = document.createElement("div");
+    contenedorTarjetas.classList.add("contenedor-tarjetas");
+    contenedorTarjetas.id = "contenedor-mas-vendidos";
 
-    //Para cerrar el menu. Creamos evento click en el btnCerrarMenu
-    btnCerrarMenu.addEventListener('click', () => {
-        nav.classList.remove('open');
-    });
+    function cargarProductosMasVendidos () {
+        productos.forEach(producto => {
+            if(producto.masVendidos){
+                const tarjeta = document.createElement("a");
+                tarjeta.href = `producto.html?${producto.id}`;
+                tarjeta.classList.add("tarjeta-producto");
+                tarjeta.innerHTML = `
+                    <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
+                    <h3>${producto.titulo}</h3>
+                    <p>$${producto.Precio}</p>
+                `;
+                contenedorTarjetas.appendChild(tarjeta);
+            }
             
+        });
+        contenedorProductosMasVendidos.appendChild(contenedorTarjetas);
+    }
+
+    cargarProductosMasVendidos();
+
+    const contenedorProductosAlAzar = document.querySelector("#carousel-productos-ver-todos");
+    const contenedorTarjetasAlAzar = document.createElement("div");
+    contenedorTarjetasAlAzar.classList.add("contenedor-tarjetas");
+    contenedorTarjetasAlAzar.id = "contenedor-tarjetas-ver-todos";
+
+    function cargarProductosAlAzar () {
+        const productosMezclados = productos.sort(() => Math.random() - 0.5);
+        const productosSeleccionadosAlAzar = productosMezclados.slice(0, 3);
+        productosSeleccionadosAlAzar.forEach(producto => {
+            const tarjeta = document.createElement("a");
+            tarjeta.href = `producto.html?${producto.id}`;
+            tarjeta.classList.add("tarjeta-producto");
+            tarjeta.innerHTML = `
+                <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
+                <h3>${producto.titulo}</h3>
+                <p>$${producto.Precio}</p>
+            `;
+            contenedorTarjetasAlAzar.appendChild(tarjeta);
+            
+        });
+        contenedorProductosAlAzar.appendChild(contenedorTarjetasAlAzar);
+    }
+
+    cargarProductosAlAzar();
+                
     // Iniciar
     startSlideShow();
 });

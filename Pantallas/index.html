@@ -5,56 +5,35 @@
         <meta name="viewport" content="width=devide-width, initial-scale=1.0">
         <title></title>
         <link rel="stylesheet" href="/Estilos/styleIndex.css">
+        <link rel="stylesheet" href="/Estilos/styleGeneral.css">
     </head>
     <body>
-        <header class="header-sticky">
-            <div class="marca">
-                <img src="/Images/logo.svg" alt="Logo Hermanos Jota" id="logo"> 
-                <p>Hermanos Jota</p>
-            </div>
-            
-            <nav>
-                <img src="/Images/icono-cerrar.png" alt="Botón Cerrar" id="btnCerrarMenu">
-                <ul>
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="productos.html">PRODUCTOS</a></li>
-                    <li><a href="contacto.html">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <img src="/Images/carrito.jpg" alt="img carrito" id="imgCarrito">
-            <img src="/Images/iconoMenu.png" alt="Icono Hamburguesa Menu" id="menu">
-        </header>
+        <div id="header-container"></div>
+
         <main>
             <div class="carrusel-container">
             <div class="carrusel">
                 <div class="slide">
-                    <img src="/Images/Mesa Comedor Pampa.png" alt="Muebles estilo clásico">
-                    <div class="slide-info">
-                        <h2>30% off en Mesas</h2>
-                        <a href="#">APROVECHAR OFERTA</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="/Images/Biblioteca Recoleta.png" alt="Muebles estilo moderno">
+                    <img src="/Images/Index/slide1.png" alt="Muebles estilo moderno">
                     <div class="slide-info">
                         <p>PIEZAS EN STOCK</p>
                         <h2>Entrega Inmediata</h2>
-                        <a href="#">VER PRODUCTOS</a>
+                        <a href="productos.html?stock">VER PRODUCTOS</a>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="/Images/Sillón Copacabana.png" alt="Muebles estilo industrial">
+                    <img src="/Images/Index/slide2.png" alt="Muebles estilo industrial">
                     <div class="slide-info">
                         <h2>Nuevos Diseños</h2>
-                        <a href="#">COMPRAR AHORA</a>
+                        <a href="productos.html">COMPRAR AHORA</a>
                     </div>
                 </div> 
                 <div class="slide">
-                    <img src="/Images/Mesa de Noche Aconcagua.png" alt="Muebles estilo rústico">
+                    <img src="/Images/Index/slide3.png" alt="Muebles estilo rústico">
                     <div class="slide-info">
                         <p>ELEGÍ EL TUYO</p>
                         <h2>Diseños a TU medida</h2>
-                        <a href="#">CONSULTAR COTIZACIÓN</a>
+                        <a href="contacto.html">CONSULTAR COTIZACIÓN</a>
                     </div>
                 </div>
             </div>
@@ -66,54 +45,33 @@
                 <!-- Los indicadores se generan con JavaScript -->
             </div>
         </div>
-            <!-- Cinta Deslizante Info de envíos -->
 
-        <section class="secc-SALE">
-            <h2>Por tiempo LIMITADO</h2>
-            <p>Cada diseño exclusivo refleja la pasión de manos expertas y materiales nobles, con <b>20% OFF</b></p>
-            <div class="contenedor-btnVertodo">
-                <a href="productos.html" class="link-ver-todo" id="btnVertodo">
-                    <span class="texto-link">VER MÁS</span>
-                    <span class="icono-flecha">&#10095;</span>
-                </a>
-            </div>
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta-producto">
-                    <img src="/Images/Sillas Córdoba.png" alt="imagen producto" class="tarjeta-foto"> 
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p>
-                </div>
-                <div class="tarjeta-producto">
-                    <img src="/Images/Butaca Mendoza.png" alt="imagen producto" class="tarjeta-foto">
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p>
-                </div>
-            </div>
-        </section>
-
+        <br>
         <section class="secc-vendidos">
             <h2>Best Sellers</h2>
             <p>Cada pieza elegida por nuestros clientes cuenta su propia historia de diseño y calidad Jota</p>
-            <div class="contenedor-btnVertodo">
-                <a href="productos.html" class="link-ver-todo" id="btnVertodo">
-                    <span class="texto-link">VER MÁS</span>
-                    <span class="icono-flecha">&#10095;</span>
-                </a>
+            <div class="carousel-container-productos" id="carousel-container-productos-mas-vendidos">
+                <!-- Se cargan las .tarjeta-producto en el script -->
             </div>
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta-producto">
-                    <img src="/Images/Sillas Córdoba.png" alt="imagen producto" class="tarjeta-foto"> 
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p>
+        </section>
+        <br><br><br>
+        <section class="secc-inspiraciones">
+            <div class="contenedor-inspiraciones">
+                <div class="tarjeta-inspiracion">
+                    <img src="/Images/Index/inspiracion1.png" alt="imagen producto" class="tarjeta-foto"> 
+                    <p>Piezas que hacen de tus tareas diarias un placer</p>
                 </div>
-                <div class="tarjeta-producto">
-                    <img src="/Images/Butaca Mendoza.png" alt="imagen producto" class="tarjeta-foto">
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p>
+                <div class="tarjeta-inspiracion">
+                    <img src="/Images/Index/inspiracion3.png" alt="imagen producto" class="tarjeta-foto"> 
+                    <p>Muebles que abrazan tu hogar</p>
+                </div>
+                <div class="tarjeta-inspiracion">
+                    <img src="/Images/Index/inspiracion2.png" alt="imagen producto" class="tarjeta-foto"> 
+                    <p>Diseños que acompañan tu descanso</p>
                 </div>
             </div>
         </section>
-
+        <br>
         <div class="envios-cinta">
             <div class="cinta-contenido">
                 <span> Envíos a todo el país </span>
@@ -122,19 +80,19 @@
                 <span> Envíos a todo el país </span>
             </div>
             <div class="cinta-contenido">
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
-            <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+                <span>Envíos a todo el país</span>
+            </div>
         </div>
-        </div>
-
+        <br>
         <section class="secc-naturales">
             <h2>Acabados Naturales</h2>
             <div class="caracteristicas">
                 <div class="contenedor-caracteristicas">
                     <div class="contenedor-img-carac">
-                        <img src="/Images/aceite-lino.png" alt="imagen descriptiva" class="img_custom">
+                        <img src="/Images/Index/aceite-lino.png" alt="imagen descriptiva" class="img_custom">
                     </div>
                     <h3>Aceite de lino</h3>
                     <p>
@@ -143,7 +101,7 @@
                 </div>
                 <div class="contenedor-caracteristicas">
                     <div class="contenedor-img-carac">
-                        <img src="/Images/cera-abejas.jpeg" alt="imagen descriptiva" class="img_custom">
+                        <img src="/Images/Index/cera-abejas.jpeg" alt="imagen descriptiva" class="img_custom">
                     </div>
                     <h3>Cera de abejas</h3>
                     <p>
@@ -152,7 +110,7 @@
                 </div>
                 <div class="contenedor-caracteristicas">
                     <div class="contenedor-img-carac">
-                        <img src="/Images/tintes-vegetales.jpg" alt="imagen descriptiva" class="img_custom">
+                        <img src="/Images/Index/tintes-vegetales.jpg" alt="imagen descriptiva" class="img_custom">
                     </div>
                     <h3>Tintes vegetales</h3>
                     <p>
@@ -161,40 +119,54 @@
                 </div>
             </div>
         </section>
-
+        <br>
         <section class="secc-vertodo">
             <a href="productos.html" class="link-ver-todo" id="btnVertodo">
                 <span class="texto-link">VER TODO</span>
                 <span class="icono-flecha">&#10095;</span>
             </a>
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta-producto">
-                    <img src="/Images/Sillas Córdoba.png" alt="imagen producto" class="tarjeta-foto"> 
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p>
+            <div class="carousel-container-productos" id="carousel-productos-ver-todos">
+                
+            </div>
+        </section>
+
+        <section class="secc-principios">
+            <div class="carousel-principios">
+                <div class="principio">
+                    <img src="/Images/Index/madera-certificada.png" alt="icono-certificacion"><br>
+                    <p>Madera certificada FSC de bosques responsables argentinos</p>
                 </div>
-                <div class="tarjeta-producto">
-                    <img src="/Images/Butaca Mendoza.png" alt="imagen producto" class="tarjeta-foto">
-                    <h3>Nombre Producto</h3>
-                    <p>$Precio</p> 
+                <div class="principio">
+                    <img src="/Images/Index/arbol-nativo.png" alt="icono-maderas-nativas"><br>
+                    <p>Prioridad a maderas nativas: algarrobo, quebracho, caldén</p>
+                </div>
+                <div class="principio">
+                    <img src="/Images/Index/sostenibilidad.png" alt="icono-voc-free"><br>
+                    <p>Solo acabados y adhesivos de bajo COV</p>
+                </div>
+                <div class="principio">
+                    <img src="/Images/Index/proveedores-locales.png" alt="icono-prov-locales"><br>
+                    <p>Proveedores locales dentro del Gran Buenos Aires</p>
+                </div>
+                <div class="principio">
+                    <img src="/Images/Index/reciclados.png" alt="icono-mat-reciclados"><br>
+                    <p>30% mínimo de materiales recuperados o reciclados</p>
+                </div>
+                <div class="principio">
+                    <img src="/Images/Index/cero-plasticos.png" alt="icono-cero-plastic"><br>
+                    <p>Cero plásticos de un solo uso en toda la cadena</p>
                 </div>
             </div>
+
+            <div class="dots-container"></div>
         </section>
         
         </main>
-        <footer>
-            <p>Redescubriendo el arte de vivir desde 2025</p>
-            <div class="footer-contacto">
-                <a href="contacto.html">Contacto</a>
-                <p><b>Barrio de San Cristóbal</b>, Av. San Juan 2847 - CABA</p>
-                <p>+54 11 4567-8900</p>
-                <a href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=4E75E31B58A76A44E54D2E7AB3F0CFC7&f_hash=3B67708D12F0EAD0932AA4590FEFB0FC">
-                    <img src="/Images/instagram.png" alt="logo instagram" id="icono-ig-contacto">
-                </a>
-                
-            </div>
-            <p>&copy; 2025, Hermanos Jota Furniture. Todos los derechos reservados.</p>
-        </footer>
+        <div id="footer-container"></div>
+
+        <script src="../Scripts/ArrayCatalogo.js"></script>
+        <script src="/Scripts/ScriptGeneral.js"></script>
+        <script src="/Scripts/carrito-scripts.js"></script>
         <script src="/Scripts/ScriptIndex.js"></script>
     </body>
 </html>
