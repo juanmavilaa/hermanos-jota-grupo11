@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnCarrito = document.querySelector("#btn-carrito");
     const carritoIcono = document.querySelector("#carrito-icono");
 
-    // Obtener productos del localStorage o inicializar vacío
+
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
 
     // ---------- FUNCIONES ----------
@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cerrarCarritoBtn?.addEventListener("click", cerrarCarrito);
     overlay?.addEventListener("click", cerrarCarrito);
 
-    // Delegación de eventos para botones de carrito
     carritoProductos.addEventListener("click", e => {
         const id = e.target.dataset.id;
         if(!id) return;
@@ -139,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Delegación de eventos para botones "Agregar al carrito" dinámicos
     document.body.addEventListener("click", e => {
         if(e.target.classList.contains("producto-agregar")) {
             const prodDiv = e.target.closest(".producto");
@@ -151,6 +149,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Inicializar
     actualizarCarrito();
 });

@@ -16,7 +16,6 @@ const productos = [
 // Contenedor de productos
 const contenedorProductos = document.querySelector("#contenedor-productos");
 
-// Cargar productos en HTML
 function cargarProductos() {
     productos.forEach(producto => {
         const div = document.createElement("div");
@@ -38,7 +37,6 @@ function cargarProductos() {
 
 
 
-// Activar botones "Agregar al carrito"
 function actualizarBotonesAgregar() {
     const botonesAgregar = document.querySelectorAll(".producto-agregar");
     botonesAgregar.forEach(boton => {
@@ -66,7 +64,7 @@ function agregarAlCarrito(e) {
     // Guardar en localStorage
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
-    // Opcional: mostrar notificación
+    //mostrar notificación
     mostrarToast(`${productoAgregado.titulo} añadido al carrito`);
 }
 
