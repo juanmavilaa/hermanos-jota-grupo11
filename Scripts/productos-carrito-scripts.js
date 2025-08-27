@@ -36,7 +36,6 @@ function cargarProductos() {
 }
 
 
-
 function actualizarBotonesAgregar() {
     const botonesAgregar = document.querySelectorAll(".producto-agregar");
     botonesAgregar.forEach(boton => {

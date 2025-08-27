@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8"><!--
-        <meta name="viewport" content="width=devide-width, initial-scale=1.0">-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
         <link rel ="stylesheet" href = "../Estilos/styleIndex.css">
         <link rel = "stylesheet" href = "../Estilos/styleProductos.css">
         <link rel="stylesheet" href="/Estilos/styleGeneral.css">
         <title> productos </title>
     </head>
-    <body><!--
-        <header>
-            <nav>
-                <ul>
-                     <li><a href="index.html">Inicio</a></li> 
-                    <li><a href="productos.html">productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </header> -->
+    <body>
         <div id="header-container"></div>
         <main>
                 <h2> Nuestros productos</h2>
@@ -29,97 +20,13 @@
                 </div>
 
                 <div class="contenedor-tarjetas" id="contenedor-tarjetas"></div>
-                    <script src="../Scripts/ArrayCatalogo.js"></script>
-                    <script src= "../Scripts/scriptProductos.js"></script>
+                    
         </main>
         <div id="footer-container"></div>
         <script src="/Scripts/ScriptGeneral.js"></script>
+        <script src="../Scripts/ArrayCatalogo.js"></script>
+        <script src= "../Scripts/scriptProductos.js"></script>
+    </body>
+</html>
 
-                <!--    <a href="producto.html" class="tarjeta-producto">
-                    <img src="/Images/Catalogo/Mesa Comedor Pampa.png" alt="Mesa Comedor Pampa" class="tarjeta-foto">
-                    <h3>Mesa Comedor Pampa</h3>
-                    <p>$Precio</p>
-                    <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
 
-                    <a href="producto.html" class="tarjeta-producto">
-                    <img src="/Images/Catalogo/Aparador Uspallata.png" alt="Aparador Uspallata" class="tarjeta-foto">
-                    <h3>Aparador Uspallata</h3>
-                    <p>$Precio</p>
-                    <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-
-                    <a href="producto.html" class="tarjeta-producto">
-                    <img src="/Images/Catalogo/Biblioteca Recoleta.png" alt="Biblioteca Recoleta" class="tarjeta-foto">
-                    <h3>Biblioteca Recoleta</h3>
-                    <p>$Precio</p>
-                    <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Mesa Comedor Pampa.png" alt="Mesa Comedor Pampa" class="tarjeta-foto">
-                        <h3>Mesa Comedor Pampa</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Aparador Uspallata.png" alt="Aparador Uspallata" class="tarjeta-foto">
-                        <h3>Aparador Uspallata</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Biblioteca Recoleta.png" alt="Biblioteca Recoleta" class="tarjeta-foto">
-                        <h3>Biblioteca Recoleta</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Butaca Mendoza.png" alt="Butaca Mendoza" class="tarjeta-foto">
-                        <h3>Butaca Mendoza</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Escritorio Costa.png" alt="Escritorio Costa" class="tarjeta-foto">
-                        <h3>Escritorio Costa</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Mesa de Centro Araucaria.png" alt="Mesa de Centro Araucaria" class="tarjeta-foto">
-                        <h3>Mesa de Centro Araucaria</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Mesa de Noche Aconcagua.png" alt="Mesa de Noche Aconcagua" class="tarjeta-foto">
-                        <h3>Mesa de Noche Aconcagua</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Silla de Trabajo Belgrano.png" alt="Silla de Trabajo Belgrano" class="tarjeta-foto">
-                        <h3>Silla de Trabajo Belgrano</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Sillas Córdoba.png" alt="Sillas Córdoba" class="tarjeta-foto">
-                        <h3>Sillas Cordoba</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Sillón Copacabana.png" alt="Sillón Copacabana" class="tarjeta-foto">
-                        <h3>Sillón Copacabana</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    <a href="producto.html" class="tarjeta-producto">
-                        <img src="/Images/Catalogo/Sofá Patagonia.png" alt="Sofá Patagonia" class="tarjeta-foto">
-                        <h3>Sofá Patagonia</h3>
-                        <p>$Precio</p>
-                        <button class="btn-agregarcarrito" type = "button"> Agregar al carrito</button>
-                    </a>
-                    -->
