@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toast.classList.add("toast", tipo);
         toast.innerText = mensaje;
         contenedor.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
+        setTimeout(() => toast.remove(), 2000);
     }
 
     function actualizarCarrito() {
