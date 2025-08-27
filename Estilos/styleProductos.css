@@ -22,14 +22,6 @@
 .buscador-productos {
     margin-top: 180px; /* Ajusta este valor al alto real del header */
 }
-/*
-main {
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 500px;
-}*/
-
 
 .btn-agregarcarrito {
     margin-top: auto;
@@ -71,8 +63,13 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin: 30px;
     justify-items: center;
     align-items: start;
+
+}
+.tarjeta-producto a {
+    text-decoration: none;
 }
 
 .tarjeta-producto {
@@ -83,4 +80,8 @@ main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+@media (min-width: 1024) {
+    
 }

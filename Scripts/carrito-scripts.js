@@ -149,4 +149,3 @@ function comprarCarrito() {
     contenedorCarritoComprado.classList.remove("disabled")
     
 }
-
