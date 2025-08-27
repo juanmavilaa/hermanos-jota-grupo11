@@ -25,7 +25,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: true
   },
   {
     id: "Biblioteca-Recoleta",
@@ -53,7 +54,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: true
   },
   {
     id: "Butaca-Mendoza",
@@ -81,7 +83,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: true
   },
   {
     id: "Escritorio-Costa",
@@ -109,7 +112,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Mesa-Comedor-Pampa",
@@ -137,7 +141,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Mesa-de-Centro-Araucaria",
@@ -165,7 +170,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Mesa-de-Noche-Aconcagua",
@@ -193,7 +199,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Silla-de-Trabajo-Belgrano",
@@ -221,7 +228,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Sillas-Córdoba",
@@ -249,7 +257,8 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Sillón-Copacabana",
@@ -277,7 +286,8 @@ const productos = [
     garantia: "10 años en estructura",
     estructura: null,
     sostenibilidad: null,
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Sofá-Patagonia",
@@ -305,7 +315,8 @@ const productos = [
     garantia: null,
     estructura: "Madera de eucalipto certificada FSC®",
     sostenibilidad: "Materiales 100% reciclables",
-    colchon: null
+    colchon: null,
+    masVendidos: false
   },
   {
     id: "Cama-Neuquen",
@@ -333,6 +344,7 @@ const productos = [
     garantia: null,
     estructura: null,
     sostenibilidad: null,
-    colchon: "Compatible con colchón 160×200"
+    colchon: "Compatible con colchón 160×200",
+    masVendidos: false
   }
 ];

@@ -7,132 +7,133 @@
     font-family: sans-serif;
 }
 
-/*
---- CONFIGURACIÓN DEL HEADER ---
-*/
-
+/* --- HEADER --- */
 .header-sticky {
-    color: white;
-    width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
-    margin-top: 0;
-    width: 100vw;
-    height: 15vh;
-    z-index: 1000;
-    background-color: rgb(255, 255, 255);
-    color: #333;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 1rem;
+    z-index: 1000;
 }
 
-#imgCarrito{
-    filter: invert(100%);
-}
-
-.marca{
+.header-marca {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-#logo{
-    margin-left: 20px;
-    width: 50px;
-    height: auto;
-    fill: #87A96B;
-}
-.marca p{
-    font-family: 'Playfair Display', sans-serif;
-    margin-left: 0;
-    padding: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    color: #A0522D;
+    gap: 10px;
 }
 
-#menu{
+.header-marca #logo {
+    width: 35px;
+    height: auto;
+}
+
+.header-marca p {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 600;
+  color: #A0522D;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-right a,
+.header-right img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header-right .material-symbols-outlined {
+  font-size: 28px;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+.header-carrito {
+  position: relative;  /* IMPORTANTE para que numerito se posicione respecto al carrito */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numerito {
+  position: absolute;
+  bottom: -4px;    
+  right: -4px;
+  background-color: #D4A437;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.6rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.header-menu {
     width: 30px;
     height: auto;
 }
 
-#imgCarrito{
-    width: 1.8rem;
-    height: auto;
-    justify-content: center;
-    fill: #87A96B;
-}
-
-nav{
-    position: fixed; /* para que quede sobre el contenido */
+.header-nav {
+    position: fixed;
     top: 0;
-    right: -250px; /* fuera de pantalla a la derecha */
+    right: -250px;
     width: 250px;
     height: 100vh;
     background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     box-shadow: -2px 0 5px rgba(0,0,0,0.3);
     transition: right 0.3s ease;
-    padding: 2rem;
-    z-index: 1000;
-    display: flex;  
-    flex-direction: column; 
-    align-items: center;
-}
-nav.open {
-  right: 0;
-}
-nav.close{
-    right: -100%;
+    z-index: 1001;
 }
 
-#btnCerrarMenu{
-    width: 20px;
-    height: auto;
-    position: absolute;       
-    right: 30px;                
-    top: 30px;                   
+.header-nav.open {
+    right: 0;
+}
+
+#btnCerrarMenu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
     cursor: pointer;
 }
 
-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 40px;
-}
-header nav ul li {
-  margin-bottom: 1rem;
-}
-header nav ul li a, header > a{
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #333;
-  transition: all 0.3s ease;
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 60px;
 }
 
-.material-symbols-outlined{
-  font-family: 'Material Symbols Outlined';
-  font-size: 35px;
+.header-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.header-sticky a {
-    position: relative; 
-    display: inline-block;
+.header-nav ul li a:hover {
+    color: rgba(212, 164, 55, 0.5);
+    font-size: 1.25rem;
 }
-
-.numerito {
-    font-family:'Poppins', sans-serif;;
-    position: absolute;
-    bottom: -5px;
-    background-color: #D4A437; 
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 50%; 
-    font-weight: 600;
-    line-height: 1;
-}
-
 /*
 --- CONFIGURACIÓN DEL FOOTER ---
 */
@@ -256,60 +257,194 @@ footer {
   color: #c47a6d;            
 }
 
-
-
-/*Para pcs*/
+/*Para pantallas más grandes*/
 @media (min-width: 1024px) {
   html {
-    font-size: 20px; /*Este valor equivale a 1rem*/
-  }
-
-  #menu {
-    visibility: hidden;
-  }
-
-  #btnCerrarMenu {
-    visibility: hidden;
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin-top: 1rem;
-  }
-
-  nav ul li {
-    margin: 0 1rem;
-  }
-
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  nav ul li a:hover, header > a:hover{
-    color: rgba(212, 164, 55, 0.5);
-  }
-
-  header nav {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    right: 0;
-    transition: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-
-  header nav.open {
-    right: 0; /* no afecta */
+    font-size: 20px; 
   }
 
   .header-sticky {
-    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 13vh;
+    padding: 0 1.5rem;
   }
+
+  .header-right {
+    gap: 20px;
+  }
+
+  #menu,#btnCerrarMenu {
+    display: none;
+  }
+
+  .header-nav {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .header-nav ul {
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .header-nav ul li a:hover, .header-right > a:hover{
+    color: rgba(212, 164, 55, 0.5);
+    font-size: 1.2rem;
+  }
+
+  .header-marca p {
+    font-size: 1.8rem;
+  }
+
+  .header-marca #logo {
+    width: 50px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 40px;
+  }
+
+  .numerito {
+    font-size: 0.8rem;
+    bottom: -15px;    /* ajusta según necesidad */
+    right: -15px;
+  }
+
+}
+
+.modal {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 300px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-content input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 0.5rem;
+    background-color: #D4A437;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#iconoUsuario {
+  color: #333; 
+  transition: color 0.3s ease;
+}
+
+#iconoUsuario:hover, #iconoUsuario.logueado:hover{
+  color: rgba(212, 164, 55, 0.5); 
+}
+
+#iconoUsuario.logueado {
+  color: #87A96B; 
+}
+
+
+/*Avatares*/
+.avatar-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 15px;
+  justify-items: center;
+  margin: 15px 0;
+  align-items: center;
+}
+.avatar-container label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar-container input[type="radio"] {
+  display: none; /* ocultamos el input */
+}
+
+.avatar-container img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border 0.3s, transform 0.2s;
+}
+
+.avatar-container input[type="radio"]:checked + img {
+  border: 3px solid #A0522D; 
+  transform: scale(1.05);
+}
+
+.avatar-container label:nth-child(4),
+.avatar-container label:nth-child(5) {
+  grid-column: span 1;
+}
+.avatar-container {
+  grid-template-rows: auto auto; 
+}
+.avatar-container label:nth-child(4) {
+  grid-column: 2; 
+}
+.avatar-container label:nth-child(5) {
+  grid-column: 3; 
+}
+#iconoUsuario img.avatar-icono {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #87A96B; 
+  object-fit: cover;
+}
+#avatarMini {
+  display: none;
 }

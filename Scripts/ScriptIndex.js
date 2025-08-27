@@ -113,7 +113,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener("resize", crearDots);
     crearDots();
+
+    const contenedorProductosMasVendidos = document.querySelector("#carousel-container-productos-mas-vendidos");
+    const contenedorTarjetas = document.createElement("div");
+    contenedorTarjetas.classList.add("contenedor-tarjetas");
+    contenedorTarjetas.id = "contenedor-mas-vendidos";
+
+    function cargarProductosMasVendidos () {
+        productos.forEach(producto => {
+            if(producto.masVendidos){
+                const tarjeta = document.createElement("a");
+                tarjeta.href = `producto.html?${producto.id}`;
+                tarjeta.classList.add("tarjeta-producto");
+                tarjeta.innerHTML = `
+                    <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
+                    <h3>${producto.titulo}</h3>
+                    <p>$${producto.Precio}</p>
+                `;
+                contenedorTarjetas.appendChild(tarjeta);
+            }
             
+        });
+        contenedorProductosMasVendidos.appendChild(contenedorTarjetas);
+    }
+
+    cargarProductosMasVendidos();
+
+    const contenedorProductosAlAzar = document.querySelector("#carousel-productos-ver-todos");
+    const contenedorTarjetasAlAzar = document.createElement("div");
+    contenedorTarjetasAlAzar.classList.add("contenedor-tarjetas");
+    contenedorTarjetasAlAzar.id = "contenedor-tarjetas-ver-todos";
+
+    function cargarProductosAlAzar () {
+        const productosMezclados = productos.sort(() => Math.random() - 0.5);
+        const productosSeleccionadosAlAzar = productosMezclados.slice(0, 3);
+        productosSeleccionadosAlAzar.forEach(producto => {
+            const tarjeta = document.createElement("a");
+            tarjeta.href = `producto.html?${producto.id}`;
+            tarjeta.classList.add("tarjeta-producto");
+            tarjeta.innerHTML = `
+                <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
+                <h3>${producto.titulo}</h3>
+                <p>$${producto.Precio}</p>
+            `;
+            contenedorTarjetasAlAzar.appendChild(tarjeta);
+            
+        });
+        contenedorProductosAlAzar.appendChild(contenedorTarjetasAlAzar);
+    }
+
+    cargarProductosAlAzar();
+                
     // Iniciar
     startSlideShow();
 });

@@ -4,22 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="../Estilos/carrito-productos-style.css">
-    <link rel="stylesheet" href="../Estilos/styleGeneral.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../Estilos/carrito-productos-style.css"> 
+    <link rel="stylesheet" href="../Estilos/carrito-style.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    <header class="header">
+        <div class="logo__container">
+            <img src="../IMAGES/logo.svg" class="header__logo">
+            <h1>Hermanos Jota</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="nav_list-item">
+                    <a href="../Pantallas/carrito-productos.html">
+                        <span class="material-symbols-outlined">
+                        store
+                        </span>
+                        Tienda
+                    </a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#" id="btn-carrito">
+                        <span class="material-symbols-outlined" id="carrito-icono">
+                            shopping_cart
+                        </span>
+                        Carrito
+                        <span class="numerito" id="numerito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="main">
         <h2 class="productos-titulo">Productos</h2>
-        <div class="lista__productos" id="contenedor-productos">
-            
-        </div>
+        <div class="lista__productos" id="contenedor-productos"></div>
     </main>
-    <div id="footer-container"></div>
 
-    <script src="../Scripts/ArrayCatalogo.js"></script>
+    <footer>
+        <span>@copyright Hermanos Jota</span>
+    </footer>
+
+    <!-- Incluye el carrito lateral -->
+    <div id="carrito-contenedor">
+        <aside id="carrito-lateral" class="carrito-lateral">
+            <div class="carrito-header">
+                <h2>Tu carrito</h2>
+                <button id="cerrar-carrito">&times;</button>
+            </div>
+            <div id="carrito-productos" class="carrito-productos"></div>
+            <div class="carrito-footer">
+                <p>Total: <span id="carrito-total">$0</span></p>
+                <a href="carrito.html" class="btn-pagar">Ir a pagar</a>
+            </div>
+        </aside>
+        <div id="overlay"></div>
+        <div id="notificaciones" class="notificaciones"></div>
+    </div>
+
     <script src="../Scripts/productos-carrito-scripts.js"></script>
-    <script src="/Scripts/ScriptGeneral.js"></script>
+    <script src="../Scripts/carrito-lateral.js"></script>
 </body>
 </html>
