@@ -83,8 +83,8 @@ const productos = [
         añadir: "añadir al carrito"
     },
     {
-        id: "Sofá-Palermo",
-        nombre: "Sofá Palermo",
+        id: "Sofá-patagonia",
+        nombre: "Sofá patagonia",
         descripcion: "Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera. Los cojines combinan espuma de alta resiliencia con plumón reciclado, ofreciendo comodidad duradera y sostenible para el hogar moderno.",
         medidas: "220 × 90 × 80 cm",
         estructura: "Madera de eucalipto certificada FSC®",
@@ -131,7 +131,7 @@ const productos = [
         añadir: "añadir al carrito"
     },
     {
-        id: "Silla-de-Trabajo Belgrano",
+        id: "Silla-de-Trabajo-Belgrano",
         nombre: "Silla de Trabajo Belgrano",
         descripcion: "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado. Diseñada para largas jornadas de trabajo con máximo confort y apoyo lumbar, ideal para oficinas en casa y espacios de coworking.",
         medidas: "60 × 60 × 90-100 cm",
