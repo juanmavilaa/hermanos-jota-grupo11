@@ -260,9 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 carritoIcono.classList.add("animar");
                 setTimeout(() => carritoIcono.classList.remove("animar"), 500);
             }
-        }
-
-        function mostrarToast(mensaje, tipo = "info") {
+        } function mostrarToast(mensaje, tipo = "info") {
             const contenedor = document.querySelector("#notificaciones");
             if(!contenedor) return;
             const toast = document.createElement("div");
