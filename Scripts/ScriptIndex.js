@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
         productos.forEach(producto => {
             if(producto.masVendidos){
                 const tarjeta = document.createElement("a");
-                tarjeta.href = `producto.html?${producto.id}`;
-                tarjeta.classList.add("tarjeta-producto");
+                tarjeta.href = `producto.html?id=${producto.id}`;
+                tarjeta.classList.add("detalle_producto");
                 tarjeta.innerHTML = `
                     <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
                     <h3>${producto.titulo}</h3>
@@ -149,8 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const productosSeleccionadosAlAzar = productosMezclados.slice(0, 3);
         productosSeleccionadosAlAzar.forEach(producto => {
             const tarjeta = document.createElement("a");
-            tarjeta.href = `producto.html?${producto.id}`;
-            tarjeta.classList.add("tarjeta-producto");
+            tarjeta.href = `producto.html?id=${producto.id}`;
+            tarjeta.classList.add("detalle_producto");
             tarjeta.innerHTML = `
                 <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
                 <h3>${producto.titulo}</h3>
@@ -162,6 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
         contenedorProductosAlAzar.appendChild(contenedorTarjetasAlAzar);
     }
 
+    cargarProductosAlAzar();
+                
+    // Iniciar
+    startSlideShow();
+});
     cargarProductosAlAzar();
                 
     // Iniciar
