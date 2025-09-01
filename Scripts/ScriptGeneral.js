@@ -227,11 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnCarrito = document.querySelector("#btn-carrito");
         const carritoIcono = document.querySelector("#carrito-icono");
 
-
         let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
 
         // ---------- FUNCIONES ----------
-
         function abrirCarrito() {
             actualizarCarrito();
             carritoLateral.classList.add("abierto");
@@ -248,7 +246,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         function actualizarNumerito() {
-            numerito.innerText = productosEnCarrito.reduce((acc, p) => acc + p.cantidad, 0);
+            if (numerito) {
+                numerito.innerText = productosEnCarrito.reduce((acc, p) => acc + p.cantidad, 0);
+            }
         }
 
         function animarNumerito() {
@@ -273,12 +273,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         function actualizarCarrito() {
+            if (!carritoProductos) return;
+            let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
+            
             carritoProductos.innerHTML = "";
             let total = 0;
 
             if(productosEnCarrito.length === 0) {
                 carritoProductos.innerHTML = `<p class="carrito-vacio">Tu carrito está vacío 🛒</p>`;
-                carritoTotal.innerText = "$0";
+                if (carritoTotal) carritoTotal.innerText = "$0";
                 actualizarNumerito();
                 return;
             }
@@ -304,73 +307,71 @@ document.addEventListener("DOMContentLoaded", () => {
                 total += prod.Precio * prod.cantidad;
             });
 
-            carritoTotal.innerText = `$${total}`;
+            if (carritoTotal) carritoTotal.innerText = `$${total}`;
             actualizarNumerito();
         }
-
-        function agregarProductoAlCarrito(idProducto, titulo, precio, imagen) {
-            const productoExistente = productosEnCarrito.find(p => p.id === idProducto);
-            if(productoExistente) {
-                productoExistente.cantidad++;
-            } else {
-                productosEnCarrito.push({id: idProducto, titulo, Precio: precio, imagen, cantidad: 1});
-            }
-            guardarCarrito();
+        // Escuchar evento de actualización del carrito
+        document.addEventListener('carritoActualizado', function(e) {
+            productosEnCarrito = e.detail.productos;
             actualizarCarrito();
             animarNumerito();
-            mostrarToast(`${titulo} añadido al carrito`);
-        }
+        });
 
         // ---------- EVENTOS ----------
-
         // Abrir/cerrar carrito
-        btnCarrito?.addEventListener("click", e => { e.preventDefault(); abrirCarrito(); });
-        cerrarCarritoBtn?.addEventListener("click", cerrarCarrito);
-        overlay?.addEventListener("click", cerrarCarrito);
+        if (btnCarrito) {
+            btnCarrito.addEventListener("click", e => { 
+                e.preventDefault(); 
+                abrirCarrito(); 
+            });
+        }
+        
+        if (cerrarCarritoBtn) {
+            cerrarCarritoBtn.addEventListener("click", cerrarCarrito);
+        }
+        
+        if (overlay) {
+            overlay.addEventListener("click", cerrarCarrito);
+        }
 
-        carritoProductos.addEventListener("click", e => {
+        if (carritoProductos) {
+            carritoProductos.addEventListener("click", e => {
             const id = e.target.dataset.id;
             if(!id) return;
 
+            // Siempre obtener la versión más actual del carrito
+            let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
             const producto = productosEnCarrito.find(p => p.id === id);
 
             if(e.target.classList.contains("btn-sumar")) {
                 producto.cantidad++;
-                guardarCarrito();
-                actualizarCarrito();
-                animarNumerito();
             } else if(e.target.classList.contains("btn-restar")) {
-                if(producto.cantidad > 1) producto.cantidad--;
-                else {
+                if(producto.cantidad > 1) {
+                    producto.cantidad--;
+                } else {
                     productosEnCarrito = productosEnCarrito.filter(p => p.id !== id);
                     mostrarToast(`${producto.titulo} eliminado del carrito`, "error");
                 }
-                guardarCarrito();
-                actualizarCarrito();
-                animarNumerito();
             } else if(e.target.classList.contains("btn-eliminar")) {
                 productosEnCarrito = productosEnCarrito.filter(p => p.id !== id);
-                guardarCarrito();
-                actualizarCarrito();
                 mostrarToast(`${producto.titulo} eliminado del carrito`, "error");
-                animarNumerito();
             }
-        });
 
-        document.body.addEventListener("click", e => {
-            if(e.target.classList.contains("producto-agregar")) {
-                const prodDiv = e.target.closest(".producto");
-                const id = e.target.id;
-                const titulo = prodDiv.querySelector(".producto-titulo").innerText;
-                const precio = parseInt(prodDiv.querySelector(".producto-precio").innerText.replace("$",""));
-                const imagen = prodDiv.querySelector(".producto-imagen").src;
-                agregarProductoAlCarrito(id, titulo, precio, imagen);
-            }
+            // Guardar cambios
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            actualizarCarrito();
+            animarNumerito();
+            
+            // Disparar evento para sincronizar con otros componentes
+            document.dispatchEvent(new CustomEvent('carritoActualizado', {
+                detail: { productos: productosEnCarrito }
+            }));
         });
+    }
 
+        // Cargar carrito inicial
         actualizarCarrito();
     
     })
     .catch(err => console.error("Error cargando footer:", err));
 });
-
