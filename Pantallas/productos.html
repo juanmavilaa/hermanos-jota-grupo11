@@ -3,24 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-        <title></title>
+        <link rel ="stylesheet" href = "../Estilos/styleIndex.css">
+        <link rel = "stylesheet" href = "../Estilos/styleProductos.css">
+        <link rel="stylesheet" href="/Estilos/carrito-lateral.css">
+        <link rel="stylesheet" href="/Estilos/styleGeneral.css">
+        <title> productos </title>
     </head>
     <body>
-        <header>
-            <h1>Productos</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+        <div id="header-container"></div>
         <main>
-
+                <h2> Nuestros productos</h2>
+                <!-- buscador -->
+                <div class = "buscador-productos">
+                <form class="buscador" role="search">
+                <input type="search" name="busca" placeholder="Buscar producto..." />
+                </form>
+                </div>
+                <div class="contenedor-tarjetas" id="contenedor-tarjetas"></div>
         </main>
-        <footer>
-            <p>&copy; 2025, Mueblería Hermanos Jota. Todos los derechos reservados.</p>
-        </footer>
+        <div id="footer-container"></div>
+        <div id="carrito-container"><div id="carrito-productos"></div></div>
+        <script src="/Scripts/ScriptGeneral.js"></script>
+        <script src="../Scripts/ArrayCatalogo.js"></script>
+        <script src= "../Scripts/scriptProductos.js"></script>
     </body>
 </html>
+
+

@@ -20,18 +20,41 @@
             <div id="loginModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
+                    <img id="avatarMini" alt="Avatar seleccionado">
                     <h2>Iniciar Sesión</h2>
                     <form id="loginForm">
                         <input type="text" id="nombre" required placeholder="Nombre">
                         <input type="email" id="email" required placeholder="Correo Electrónico">
-                        
+                        <h3>Seleccioná tu Avatar</h3>
+                        <div class="avatar-container">
+                            <label>
+                                <input type="radio" name="avatar" value="castor">
+                                <img src="/Images/Avatares/avatar-castor.png" alt="Castor">
+                            </label>
+                            <label>
+                                <input type="radio" name="avatar" value="buho">
+                                <img src="/Images/Avatares/avatar-buho.png" alt="Búho">
+                            </label>
+                            <label>
+                                <input type="radio" name="avatar" value="ardilla">
+                                <img src="/Images/Avatares/avatar-ardilla.png" alt="Ardilla">
+                            </label>
+                            <label>
+                                <input type="radio" name="avatar" value="pajaro">
+                                <img src="/Images/Avatares/avatar-pajaro.png" alt="Pajaro Carpintero">
+                            </label>
+                            <label>
+                                <input type="radio" name="avatar" value="mapache">
+                                <img src="/Images/Avatares/avatar-mapache.png" alt="Mapache">
+                            </label>
+                        </div>
                         <button type="submit">Iniciar Sesión</button>
                     </form>
                 </div>
             </div>
 
-        <a href="../Pantallas/carrito.html" class="header-carrito">
-            <span class="material-symbols-outlined">
+        <a href="#" class="header-carrito" id="btn-carrito">
+            <span class="material-symbols-outlined" id="carrito-icono">
                 shopping_cart
             </span>
             <span class="numerito" id="numerito">0</span>

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="../Estilos/carrito-style.css">
-    <link rel="stylesheet" href="../Estilos/styleGeneral.css">
+    <link rel="stylesheet" href="/Estilos/styleGeneral.css">
 </head>
 <body>
     <div id="header-container"></div>
     <main>
-        <a href="../Pantallas/carrito-productos.html" id="SeguirComprando">
-            <span class="material-symbols-outlined">
-                subdirectory_arrow_left
-            </span>
+        <a href="../Pantallas/productos.html">
+            <span class="material-symbols-outlined">subdirectory_arrow_left</span>
             Seguir Comprando
         </a>
         <h2 class="titulo__principal">Carrito</h2>
@@ -22,81 +22,7 @@
             sentiment_dissatisfied
             </span></p>
 
-            <div id="carrito-productos" class="productos-agregados disabled">
-
-                <div class="producto-agregado">
-                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
-                    <div class="carrito-producto-titulo">
-                        <small>Titulo</small>
-                        <h3>Aparador</h3>
-                    </div>
-                    <div class="carrito-producto-cantidad">
-                        <small>Cantidad</small>
-                        <p>1</p>
-                    </div>
-                    <div class="carrito-producto-precio">
-                        <small>Precio</small>
-                        <p>$</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <small>Subtotal</small>
-                        <p>$</p>
-                    </div>
-                    <button class="carrito-producto-eliminar">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                    </button>
-                </div>
-                <div class="producto-agregado">
-                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
-                    <div class="carrito-producto-titulo">
-                        <small>Titulo</small>
-                        <h3>Aparador</h3>
-                    </div>
-                    <div class="carrito-producto-cantidad">
-                        <small>Cantidad</small>
-                        <p>1</p>
-                    </div>
-                    <div class="carrito-producto-precio">
-                        <small>Precio</small>
-                        <p>$</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <small>Subtotal</small>
-                        <p>$</p>
-                    </div>
-                    <button class="carrito-producto-eliminar">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                    </button>
-                </div>
-                <div class="producto-agregado">
-                    <img src="IMAGES/Aparador Uspallata.png" class="carrito-producto-img">
-                    <div class="carrito-producto-titulo">
-                        <small>Titulo</small>
-                        <h3>Aparador</h3>
-                    </div>
-                    <div class="carrito-producto-cantidad">
-                        <small>Cantidad</small>
-                        <p>1</p>
-                    </div>
-                    <div class="carrito-producto-precio">
-                        <small>Precio</small>
-                        <p>$</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <small>Subtotal</small>
-                        <p>$</p>
-                    </div>
-                    <button class="carrito-producto-eliminar">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                    </button>
-                </div>
-            </div>
+            <div id="carrito-productos" class="productos-agregados disabled"> </div>
             <div id="carrito-acciones" class="carrito-acciones disabled">
                 <div class="carrito-acciones-izquierda">
                     <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
@@ -116,8 +42,9 @@
 
         </div>
     </main>
-
+    <div id="footer-container"></div>    
+    <script src="../Scripts/ArrayCatalogo.js"></script>
+    <script src="/Scripts/ScriptGeneral.js"></script>
     <script src="../Scripts/carrito-scripts.js"></script>
-    <script src="../Scripts/ScriptGeneral.js"></script>
 </body>
 </html>
