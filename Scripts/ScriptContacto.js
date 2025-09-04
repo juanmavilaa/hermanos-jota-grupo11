@@ -40,6 +40,10 @@ formulario.addEventListener("submit", function (event) {
 
   console.log("Datos del formulario:", formData);
 
+  alert(
+    `Mensaje enviado correctamente con los datos: \n - Nombre: ${formData.nombre} \n - Email: ${formData.email} \n - Mensaje: ${formData.mensaje}`
+  );
+
   // envio al servidor
   cargarDatosDelFormulario(formData);
 
