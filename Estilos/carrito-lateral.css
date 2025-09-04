@@ -60,7 +60,7 @@
 .carrito-producto img {
     width: 60px;
     border-radius: 8px;
-    background-color: var(--clr-secondary);
+    background-color: var(--clr-backg);
 }
 
 .carrito-info h4 {
@@ -75,14 +75,14 @@
 }
 
 .carrito-controles button {
-    background: var(--clr-secondary);
+    background: #c47a6d;
     border: none;
     color: #fff;
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    transition: background 0.5s;
 }
 
 .carrito-controles button:hover {
@@ -106,7 +106,7 @@
 
 .btn-pagar {
     display: block;
-    background: var(--clr-secondary);
+    background: #c47a6d;
     color: #fff;
     text-align: center;
     padding: 0.75rem;
