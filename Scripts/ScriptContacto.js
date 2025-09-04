@@ -31,6 +31,17 @@ formulario.addEventListener("submit", function (event) {
   const email = formulario.elements.email.value;
   const mensaje = formulario.elements.mensaje.value;
 
+  if (!(nombre && email && mensaje)) {
+    alert("Por favor, complete todos los campos.");
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Por favor, ingrese un correo electrónico válido.");
+    return;
+  }
+
   if (mensaje.length < 10) {
     alert("El mensaje debe tener al menos 10 caracteres.");
     return;
@@ -40,9 +51,11 @@ formulario.addEventListener("submit", function (event) {
 
   console.log("Datos del formulario:", formData);
 
-  alert(
-    `Mensaje enviado correctamente con los datos: \n - Nombre: ${formData.nombre} \n - Email: ${formData.email} \n - Mensaje: ${formData.mensaje}`
-  );
+  const mensajeExito = document.createElement("p");
+  mensajeExito.textContent = "Mensaje enviado con éxito!";
+  mensajeExito.style.color = "#87a96b";
+  mensajeExito.style.fontWeight = "700";
+  formulario.appendChild(mensajeExito);
 
   // envio al servidor
   cargarDatosDelFormulario(formData);
@@ -65,9 +78,9 @@ async function cargarDatosDelFormulario(formData) {
     });
 
     if (response.ok) {
-      alert("Mensaje enviado correctamente");
+      alert("Mensaje enviado al servidor correctamente");
     } else {
-      alert("Error al enviar el mensaje");
+      alert("Error al enviar el mensaje al servidor");
     }
   } catch (error) {
     console.error("Error:", error);
