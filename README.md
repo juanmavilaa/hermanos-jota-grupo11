@@ -25,7 +25,10 @@ El sitio incluye:
 - **Página de Catálogo (productos.html):** Visualización de todos los productos en formato grilla con tarjetas dinámicas.
 - **Página de Detalle de Producto (producto.html):** Información completa del producto y opción para "Añadir al Carrito".
 - **Página de Contacto (contacto.html):** Formulario validado con JavaScript para consultas de clientes.
-- **Carrito Simulado:** Un contador de productos en el header que incrementa al añadir artículos.
+- **Carrito Simulado:** Incorpora una experiencia de compra práctica y visual:
+  * Un contador dinámico en el header, siempre visible, que muestra al instante la cantidad de productos añadidos.
+  * Una barra lateral de acceso rápido, disponible en cualquier pantalla, con un resumen ágil de cada producto (nombre, imagen, cantidad, precio unitario y subtotal).
+  * Una pantalla de detalle completa (carrito.html), donde se muestra toda la información del carrito (nombre, imagen, cantidad, precio unitario, subtotal por producto y total). Además, incluye funciones para eliminar elementos y un botón “Comprar ahora”, que actualmente despliega un mensaje informativo,
 
 ## Tecnologías Utilizadas
 
