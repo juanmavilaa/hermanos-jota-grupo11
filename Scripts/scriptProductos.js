@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contenedor.innerHTML = '';
         lista.forEach(prod => {
             contenedor.innerHTML += `
-            <div class="tarjeta-producto">
+            <div class="detalle_producto">
                 <a href="producto.html?id=${prod.id}">
                     <img src="${prod.imagen}" alt="${prod.titulo}" class="tarjeta-foto">
                     <h3>${prod.titulo}</h3>
