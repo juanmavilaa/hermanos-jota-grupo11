@@ -5,7 +5,7 @@
 ## Grupo 11 - Code Breakers
 
 - Fabrizio, Jazmin Maia
-- Gentile, Agostina Abril
+- Gentille, Agostina Abril
 - Giménez, Agustín José
 - Insaurralde, Mariano Gastón
 - Vila, Juan Manuel
