@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -21,8 +22,12 @@ main {
   display: block;
   position: relative;
   z-index: 1;
-  margin-top: 15vh;
   padding: 1rem;
+  margin-top: 5vh;
+}
+
+section{
+  margin-bottom: 100px;
 }
 
 /* seccion 'Nuestra historia' */
@@ -30,15 +35,15 @@ main {
   margin: 3rem auto;
   max-width: 900px;
   padding: 2rem;
-  background-color: var(--color-background);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px black;
+  align-items: center;
 }
 
 .nuestra-historia__texto {
   font-size: 1rem;
-  margin-bottom: 1rem;
   text-align: justify;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  color: #333;
 }
 
 .nuestra-historia__texto__resaltar {
@@ -75,14 +80,17 @@ main {
   padding: 2rem;
   background-color: var(--color-background);
   border-radius: 12px;
-  box-shadow: 0 4px 10px black;
+  box-shadow: 0 4px 10px #333;
 }
 
 .contacto__titulo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
   color: var(--color-primario);
   text-align: center;
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 500;
 }
 
 .contacto__formulario {
@@ -94,20 +102,26 @@ main {
   gap: 1rem;
 }
 
-.contacto__formulario__label,
+.contacto__formulario__nombre_email{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
 .contacto__formulario__input,
 .contacto__formulario__mensaje,
 .contacto__formulario__boton {
   margin: auto;
   width: 100%;
-  font-weight: bold;
   font-size: 1rem;
+  color: #333;
 }
 
 .contacto__formulario__input,
 .contacto__formulario__mensaje {
   padding: 0.75rem;
-  border: 1px solid;
+  border:#333 1px solid;
   border-radius: 5px;
 }
 
@@ -117,12 +131,16 @@ main {
   cursor: pointer;
   margin: auto;
   width: 100%;
-  background-color: var(--color-primario);
+  background-color: var(--color-acentos-suaves);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 .contacto__formulario__boton:hover {
-  background-color: var(--color-secundario);
-  color: white;
+  background-color: #a0522d;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 
 /*  seccion contenido digital */
@@ -132,8 +150,14 @@ main {
   overflow-x: auto;
   background-color: var(--color-background);
   border-radius: 8px;
-  box-shadow: 0 2px 6px black;
-  font-weight: bold;
+  box-shadow: 0 2px 6px #333;
+}
+
+.contacto-digital__tabla__elemento-izquierdo{
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--color-acentos-suaves);
 }
 
 .contacto-digital__tabla {
@@ -158,6 +182,7 @@ main {
 .contacto-digital a {
   color: var(--color-secundario);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .contacto-digital a:hover {

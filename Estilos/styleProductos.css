@@ -33,7 +33,7 @@
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
 }
 .btn-agregarcarrito:hover {
     background-color: #a0522d;
