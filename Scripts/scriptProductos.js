@@ -3,21 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
     
-    function obtenerProductos() {
-        return new Promise((resolve) => {
-            setTimeout(() => {
+    function obtenerProductos() { 
+        return new Promise((resolve) => { 
+            setTimeout(() => { 
                 resolve(productos); 
             }, 1500); 
-        });
+        }); 
     }
     actualizarNumerito();
 
-    /* parte de búsqueda */
-    async function renderProductos() {
-        const data = await obtenerProductos();
+    async function renderProductos(lista = null) {
+        const data = lista || await obtenerProductos(); // si no hay lista ya cargada, obtenemos todos los prd
         const contenedor = document.getElementById('contenedor-tarjetas');
         contenedor.innerHTML = '';
-         let delay = 0;
+        let delay = 0;
 
         data.forEach(prod => {
             const tarjeta = document.createElement('div');
@@ -32,13 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-agregarcarrito" type="button" data-id="${prod.id}">Agregar al carrito</button>
             `;
 
-            // Agregar al contenedor
             contenedor.appendChild(tarjeta);
+
             setTimeout(() => {
-                    tarjeta.classList.add("mostrar");
-                }, delay);
-                delay += 200;
+                tarjeta.classList.add("mostrar");
+            }, delay);
+
+            delay += 200;
         });
+
         actualizarBotonesAgregar();
     }
 
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         inputBusqueda.addEventListener('input', function(e) {
             const valor = e.target.value.toLowerCase();
             const filtrados = productos.filter(p => p.titulo.toLowerCase().includes(valor));
-            renderProductos(filtrados);
+            renderProductos(filtrados); // llamamos a la misma función, animación incluida
         });
     }
 
