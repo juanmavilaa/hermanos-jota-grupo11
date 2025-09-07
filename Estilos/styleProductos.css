@@ -40,6 +40,14 @@
     min-height: 400px;
     text-align: center;
     overflow: hidden;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+}
+
+.tarjeta-producto.mostrar {
+  opacity: 1;
+  transform: translateX(0); 
 }
 
 .tarjeta-producto a {
@@ -86,5 +94,12 @@
 
     .contenedor-tarjetas {
         margin: 30px;
+    }
+
+    main {
+        z-index: 1;
+        margin-top: clamp(8rem, 15vh, 12rem);
+        padding: 1rem;
+        margin-top: 5vh;
     }
 }
