@@ -37,10 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setAvatar(avatar) {
         iconoUsuario.innerHTML = `<img src="/Images/Avatares/avatar-${avatar}.png" alt="Avatar" class="avatar-icono">`;
+        iconoUsuario.title= "Cerrar Sesión"
     }
 
     function resetAvatar() {
         iconoUsuario.innerHTML = "account_circle"; // vuelve al ícono por defecto
+        iconoUsuario.title= "Iniciar Sesión"
     }
 
     // Funciones para el avatar mini dentro del modal
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const avatarGuardado = localStorage.getItem("avatarUsuario");
         if (avatarGuardado) {
             setAvatar(avatarGuardado);
-            mostrarAvatarMini(avatarGuardado); // opcional: si querés que se vea en el modal
+            mostrarAvatarMini(avatarGuardado); 
         } else {
             resetAvatar();
             ocultarAvatarMini();
@@ -81,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.removeItem("emailUsuario");
                 localStorage.removeItem("avatarUsuario");
                 iconoUsuario.classList.remove("logueado");
+
                 resetAvatar();
                 ocultarAvatarMini();
             }
@@ -299,7 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <p>Subtotal: $${prod.Precio * prod.cantidad}</p>
                     </div>
-                    <button class="btn-eliminar" data-id="${prod.id}">❌</button>
                 `;
                 carritoProductos.append(div);
                 total += prod.Precio * prod.cantidad;
