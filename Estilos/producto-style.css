@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 main {
     z-index: 1;
     margin-top: clamp(8rem, 15vh, 12rem);
@@ -32,6 +34,8 @@ body {
     gap: 20px;
     max-width: 1200px;
     width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 .detalle_producto img {
@@ -52,6 +56,7 @@ body {
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
+    font-family: "Playfair Display",sans-serif;
 }
 
 .info-detalle ul {
@@ -85,6 +90,11 @@ body {
     width: 100%;
 }
 
+.precio{
+    text-align: right;
+    font-family: "Playfair Display",sans-serif;
+    font-size: 2rem;
+}
 .btn-agregarcarrito:hover {
     background-color: #a0522d;
     letter-spacing: 1px;
@@ -96,6 +106,8 @@ body {
         align-items: flex-start;
         gap: 30px;
         justify-content: center;
+        margin-top: 10vh;
+        margin-bottom: 15vh;
     }
 
     .detalle_producto img {
@@ -128,6 +140,11 @@ body {
 
     .detalle_producto img {
         width: 500px;
+    }
+
+    .detalle_producto {
+        margin-top: 10vh;
+        margin-bottom: 20vh;
     }
 
     .info-detalle h2 {

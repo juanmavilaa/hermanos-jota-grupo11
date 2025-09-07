@@ -22,6 +22,7 @@ async function mostrarProducto() {
         <div class="info-detalle">
           <h2>${producto.titulo}</h2>
           <p>${producto.descripcion}</p>
+          <p class="precio">$${producto.Precio ? producto.Precio : "Consultar"}.-</p>
           <ul>
             ${producto.medidas ? `<li><strong>Medidas:</strong> ${producto.medidas}</li>` : ""}
             ${producto.materiales ? `<li><strong>Materiales:</strong> ${producto.materiales}</li>` : ""}
@@ -45,7 +46,6 @@ async function mostrarProducto() {
             ${producto.apilables ? `<li><strong>Apilables:</strong> ${producto.apilables}</li>` : ""}
             ${producto.cables ? `<li><strong>Cables:</strong> ${producto.cables}</li>` : ""}
           </ul>
-          <p class="precio">$${producto.Precio ? producto.Precio : "Consultar"}</p>
           <button class="btn-agregarcarrito" data-id="${producto.id}">Añadir al carrito</button>
         </div>
       </div>
