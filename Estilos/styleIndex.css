@@ -190,10 +190,17 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: all 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   margin: 15px;
   text-decoration: none;
   scroll-snap-align: start;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.tarjeta-producto.mostrar {
+  opacity: 1;
+  transform: translateX(0); /* vuelve a su posición */
 }
 
 .tarjeta-producto:hover {
