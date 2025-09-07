@@ -1,3 +1,10 @@
+main {
+    z-index: 1;
+    margin-top: clamp(8rem, 15vh, 12rem);
+    padding: 1rem;
+    margin-top: 5vh;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -127,4 +134,5 @@ body {
         font-size: 30px;
     }
 }
+
 
