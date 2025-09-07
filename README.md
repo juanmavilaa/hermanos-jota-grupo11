@@ -28,7 +28,8 @@ El sitio incluye:
 - **Carrito Simulado:** Incorpora una experiencia de compra práctica y visual:
   * Un contador dinámico en el header, siempre visible, que muestra al instante la cantidad de productos añadidos.
   * Una barra lateral de acceso rápido, disponible en cualquier pantalla, con un resumen ágil de cada producto (nombre, imagen, cantidad, precio unitario y subtotal).
-  * Una pantalla de detalle completa (carrito.html), donde se muestra toda la información del carrito (nombre, imagen, cantidad, precio unitario, subtotal por producto y total). Además, incluye funciones para eliminar elementos y un botón “Comprar ahora”, que actualmente despliega un mensaje informativo,
+  * Una pantalla de detalle completa (carrito.html), donde se muestra toda la información del carrito (nombre, imagen, cantidad, precio unitario, subtotal por producto y total). Además, incluye funciones para eliminar elementos y un botón “Comprar ahora”, que actualmente despliega un mensaje informativo.
+- **Inicio de Sesión y Autocompletado:** Por el momento, los formularios de contacto y de inicio de sesión permiten que los datos se completen automáticamente, simulando una experiencia de usuario más fluida. En un futuro, esta funcionalidad se podrá extender para que, al simular una compra (incluyendo datos de pago, contacto y datos personales), los formularios se completen de manera automática también.
 
 ## Tecnologías Utilizadas
 
