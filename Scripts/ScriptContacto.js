@@ -24,6 +24,18 @@ const formularios = [];
 
 const formulario = document.getElementById("contactForm");
 
+const formCampos = formulario.getElementsByClassName(
+  "contacto__formulario__campo"
+);
+for (let campo of formCampos) {
+  campo.addEventListener("input", function () {
+    const mensajeExito = document.getElementById("mensaje-exito");
+    if (mensajeExito) {
+      mensajeExito.remove();
+    }
+  });
+}
+
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -55,10 +67,11 @@ formulario.addEventListener("submit", function (event) {
   mensajeExito.textContent = "Mensaje enviado con éxito!";
   mensajeExito.style.color = "#87a96b";
   mensajeExito.style.fontWeight = "700";
+  mensajeExito.id = "mensaje-exito";
   formulario.appendChild(mensajeExito);
 
   // envio al servidor
-  cargarDatosDelFormulario(formData);
+  // cargarDatosDelFormulario(formData);
 
   // guardo localmente
   formularios.push(formData);

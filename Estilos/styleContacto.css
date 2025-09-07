@@ -43,10 +43,9 @@ main {
   z-index: 1;
   margin-top: clamp(8rem, 15vh, 12rem);
   padding: 1rem;
-  margin-top: 5vh;
 }
 
-section{
+section {
   margin-bottom: 100px;
 }
 
@@ -118,7 +117,7 @@ section{
   letter-spacing: 1px;
   color: var(--color-primario);
   text-align: center;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   font-weight: 500;
 }
 
@@ -131,7 +130,7 @@ section{
   gap: 1rem;
 }
 
-.contacto__formulario__nombre_email{
+.contacto__formulario__nombre_email {
   display: flex;
   flex-direction: row;
   width: 100%;
