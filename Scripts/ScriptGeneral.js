@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailGuardado = localStorage.getItem("emailUsuario");
 
     function setAvatar(avatar) {
-        iconoUsuario.innerHTML = `<img src="/Images/Avatares/avatar-${avatar}.png" alt="Avatar" class="avatar-icono">`;
+        iconoUsuario.innerHTML = `<img src="Images/Avatares/avatar-${avatar}.png" alt="Avatar" class="avatar-icono">`;
         iconoUsuario.title= "Cerrar Sesión"
     }
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Funciones para el avatar mini dentro del modal
     function mostrarAvatarMini(avatar) {
-        avatarMini.src = `/Images/Avatares/avatar-${avatar}.png`;
+        avatarMini.src = `Images/Avatares/avatar-${avatar}.png`;
         avatarMini.classList.remove("oculto");
     }
 
