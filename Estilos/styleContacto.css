@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -42,6 +43,11 @@ main {
   z-index: 1;
   margin-top: clamp(8rem, 15vh, 12rem);
   padding: 1rem;
+  margin-top: 5vh;
+}
+
+section{
+  margin-bottom: 100px;
 }
 
 /* seccion 'Nuestra historia' */
@@ -59,6 +65,9 @@ main {
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
   text-align: justify;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  color: #333;
 }
 
 .nuestra-historia__texto__resaltar {
@@ -97,7 +106,7 @@ main {
   padding: 2rem;
   background-color: var(--color-background);
   border-radius: 12px;
-  box-shadow: 0 4px 10px black;
+  box-shadow: 0 4px 10px #333;
 }
 
 .contacto__titulo {
@@ -106,8 +115,11 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
   color: var(--color-primario);
   text-align: center;
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 500;
 }
 
 .contacto__formulario {
@@ -119,7 +131,13 @@ main {
   gap: 1rem;
 }
 
-.contacto__formulario__label,
+.contacto__formulario__nombre_email{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
 .contacto__formulario__input,
 .contacto__formulario__mensaje,
 .contacto__formulario__boton {

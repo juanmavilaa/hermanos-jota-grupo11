@@ -3,33 +3,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
     
-    renderProductos(productos);
+    function obtenerProductos() { 
+        return new Promise((resolve) => { 
+            setTimeout(() => { 
+                resolve(productos); 
+            }, 1500); 
+        }); 
+    }
     actualizarNumerito();
 
-    /* parte de búsqueda */
-    function renderProductos(lista) {
+    async function renderProductos(lista = null) {
+        const data = lista || await obtenerProductos(); // si no hay lista ya cargada, obtenemos todos los prd
         const contenedor = document.getElementById('contenedor-tarjetas');
         contenedor.innerHTML = '';
-        lista.forEach(prod => {
-            contenedor.innerHTML += `
-            <div class="tarjeta-producto">
+        let delay = 0;
+
+        data.forEach(prod => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjeta-producto');
+
+            tarjeta.innerHTML = `
                 <a href="producto.html?id=${prod.id}">
                     <img src="${prod.imagen}" alt="${prod.titulo}" class="tarjeta-foto">
                     <h3>${prod.titulo}</h3>
                     <p>$${prod.Precio}</p>
                 </a>
                 <button class="btn-agregarcarrito" type="button" data-id="${prod.id}">Agregar al carrito</button>
-            </div>`;
+            `;
+
+            contenedor.appendChild(tarjeta);
+
+            setTimeout(() => {
+                tarjeta.classList.add("mostrar");
+            }, delay);
+
+            delay += 200;
         });
+
         actualizarBotonesAgregar();
     }
+
+    renderProductos();
 
     const inputBusqueda = document.querySelector('input[name="busca"]');
     if (inputBusqueda) {
         inputBusqueda.addEventListener('input', function(e) {
             const valor = e.target.value.toLowerCase();
             const filtrados = productos.filter(p => p.titulo.toLowerCase().includes(valor));
-            renderProductos(filtrados);
+            renderProductos(filtrados); // llamamos a la misma función, animación incluida
         });
     }
 

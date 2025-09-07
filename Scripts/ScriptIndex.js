@@ -119,20 +119,34 @@ document.addEventListener('DOMContentLoaded', function() {
     contenedorTarjetas.classList.add("contenedor-tarjetas");
     contenedorTarjetas.id = "contenedor-mas-vendidos";
 
-    function cargarProductosMasVendidos () {
-        productos.forEach(producto => {
+    function obtenerProductos() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(productos); 
+            }, 1500); 
+        });
+    }
+
+    async function cargarProductosMasVendidos () {
+        const data = await obtenerProductos();
+        let delay = 0;
+
+        data.forEach(producto => {
             if(producto.masVendidos){
                 const tarjeta = document.createElement("a");
                 tarjeta.href = `producto.html?id=${producto.id}`;
-                tarjeta.classList.add("detalle_producto");
+                tarjeta.classList.add("tarjeta-producto");
                 tarjeta.innerHTML = `
                     <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
                     <h3>${producto.titulo}</h3>
                     <p>$${producto.Precio}</p>
                 `;
                 contenedorTarjetas.appendChild(tarjeta);
+                setTimeout(() => {
+                    tarjeta.classList.add("mostrar");
+                }, delay);
+                delay += 200; /*El delay entre el 'mostrar' de cada tarjeta*/
             }
-            
         });
         contenedorProductosMasVendidos.appendChild(contenedorTarjetas);
     }
@@ -144,19 +158,25 @@ document.addEventListener('DOMContentLoaded', function() {
     contenedorTarjetasAlAzar.classList.add("contenedor-tarjetas");
     contenedorTarjetasAlAzar.id = "contenedor-tarjetas-ver-todos";
 
-    function cargarProductosAlAzar () {
-        const productosMezclados = productos.sort(() => Math.random() - 0.5);
+    async function cargarProductosAlAzar () {
+        const data = await obtenerProductos();
+        const productosMezclados = data.sort(() => Math.random() - 0.5);
         const productosSeleccionadosAlAzar = productosMezclados.slice(0, 3);
+        let delay = 0; 
         productosSeleccionadosAlAzar.forEach(producto => {
             const tarjeta = document.createElement("a");
             tarjeta.href = `producto.html?id=${producto.id}`;
-            tarjeta.classList.add("detalle_producto");
+            tarjeta.classList.add("tarjeta-producto");
             tarjeta.innerHTML = `
                 <img src="${producto.imagen}" alt="imagen producto" class="tarjeta-foto"> 
                 <h3>${producto.titulo}</h3>
                 <p>$${producto.Precio}</p>
             `;
             contenedorTarjetasAlAzar.appendChild(tarjeta);
+            setTimeout(() => {
+                tarjeta.classList.add("mostrar");
+            }, delay);
+            delay += 200; /*El delay entre el 'mostrar' de cada tarjeta*/
             
         });
         contenedorProductosAlAzar.appendChild(contenedorTarjetasAlAzar);
@@ -167,8 +187,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar
     startSlideShow();
 });
-    cargarProductosAlAzar();
-                
-    // Iniciar
-    startSlideShow();
-});
+
+(async function init() {
+    await cargarProductosMasVendidos();
+    await cargarProductosAlAzar();
+})();
+

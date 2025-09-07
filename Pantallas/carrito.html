@@ -12,32 +12,54 @@
 <body>
     <div id="header-container"></div>
     <main>
-        <a href="../Pantallas/productos.html">
-            <span class="material-symbols-outlined">subdirectory_arrow_left</span>
-            Seguir Comprando
-        </a>
-        <h2 class="titulo__principal">Carrito</h2>
+        <div class="seguir-comprando">
+            <a href="../Pantallas/productos.html" title="Seguir comprando">
+                <span class="material-symbols-outlined" id="icono-seguir-comprando">arrow_circle_left</span>
+                
+            </a>
+        </div>
+        <div class="titulo-carrito">
+            <span class="material-symbols-outlined" id="icono-camion">local_shipping</span>
+            <h2 class="titulo__principal">Carrito de Compras</h2>
+        </div>
+        
         <div class="contenedor__carrito">
+            <div class="carrito-acciones-izquierda">
+                <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
+            </div>
             <p id="carrito-vacio" class="carrito-vacio">Tu carrito está Vacío. <span class="material-symbols-outlined">
             sentiment_dissatisfied
             </span></p>
-
-            <div id="carrito-productos" class="productos-agregados disabled"> </div>
-            <div id="carrito-acciones" class="carrito-acciones disabled">
-                <div class="carrito-acciones-izquierda">
-                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
-                </div>
-                <div class="carrito-acciones-derecha">
-                    <div class="carrito-acciones-total">
-                        <p>Total:</p>
-                        <p id="total">$</p>
-                    </div>
-                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
-                </div>
-            </div>
             <p id="carrito-comprado" class="carrito-comprado disabled">Gracias por tu compra. <span class="material-symbols-outlined">
             sentiment_very_satisfied
             </span>
+
+            <table id="carrito-productos">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Título</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Acá se agregan los productos -->
+                </tbody>
+            </table>
+            <div id="carrito-acciones" class="carrito-acciones disabled">
+                <div class="carrito-acciones-total">
+                    <p>Total:</p>
+                    <p id="total">$</p>
+                </div>
+                <div class="nota-pedido">
+                    <textarea id="nota" placeholder=" " rows="3"></textarea>
+                    <label for="nota">Nota del pedido</label>
+                </div>
+                <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
+            </div>
             </p>
 
         </div>
