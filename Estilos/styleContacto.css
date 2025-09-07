@@ -156,6 +156,12 @@ section {
   border-radius: 5px;
 }
 
+.contacto__formulario__mensaje {
+  min-height: 150px;
+  resize: none;
+  overflow-y: auto;
+}
+
 .contacto__formulario__input:focus,
 .contacto__formulario__mensaje:focus {
   outline: 2px solid var(--color-primario);
