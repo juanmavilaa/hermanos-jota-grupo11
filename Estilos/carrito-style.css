@@ -73,6 +73,9 @@ a {
     color: var(--clr-title);
 }
 
+#carrito-acciones.disabled {
+    display: none !important;
+}
 
 .contenedor__carrito {
     max-width: 1000px;
