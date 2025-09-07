@@ -2,11 +2,20 @@ const params = new URLSearchParams(window.location.search);
 const idProducto = params.get("id");
 let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
 
-function mostrarProducto() {
-  const contenedor = document.getElementById("detalle_producto");
-  const producto = productos.find(p => p.id === idProducto);
+function obtenerProducto(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const producto = productos.find(p => p.id === id);
+      if (producto) resolve(producto);
+      else reject("Producto no encontrado");
+    }, 500);
+  });
+}
 
-  if (producto) {
+async function mostrarProducto() {
+  const contenedor = document.getElementById("detalle_producto");
+  try {
+    const producto = await obtenerProducto(idProducto);
     contenedor.innerHTML = `
       <div class="detalle_producto">
         <img src="${producto.imagen}" alt="${producto.titulo}">
@@ -45,9 +54,11 @@ function mostrarProducto() {
     const boton = document.querySelector(".btn-agregarcarrito");
     if (boton) boton.addEventListener("click", agregarAlCarrito);
 
-  } else {
-    contenedor.innerHTML = `<p style="color:red;">Producto no encontrado</p>`;
+  } catch (error){
+    contenedor.innerHTML = `<p style="color:red;">${error}</p>`;
   }
+
+
 }
 
 function agregarAlCarrito(e) {
@@ -97,4 +108,6 @@ document.addEventListener('carritoActualizado', function(e) {
         actualizarNumerito();
     });
 
-mostrarProducto();
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarProducto();
+});
